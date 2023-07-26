@@ -1,7 +1,7 @@
 baseURL = "https://fruworg.github.io/"
 anguageCode = "ru-RU"
 title = "фрув.орг"
-theme = "archie"
+theme = "themu"
 
 pygmentsstyle = "fruity"
 pygmentscodefences = true
