@@ -1,4 +1,4 @@
-baseURL = "http://fruw.org/"
+baseURL = "http://fruworg.github.io/"
 anguageCode = "ru-RU"
 title = "фрув.орг"
 theme = "archie"
