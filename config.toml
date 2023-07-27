@@ -13,6 +13,30 @@ paginate=4 # articles per page
 	description="всем привет!"
 	#useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
 
+[[params.social]]
+name = "uptime"
+url = "https://up.fruw.org"
+
+[[params.social]]
+name = "git"
+url = "https://github.com/fruworg"
+
+[[params.social]]
+name = "mail"
+url = "mailto:im@fruw.org"
+
+[[params.social]]
+name = "matrix"
+url = "https://matrix.to/#/@im:fruw.org"
+
+[[params.social]]
+name = "tg"
+url = "https://t.me/fruworg"
+
+[[params.social]]
+name = "pgp"
+url = "https://fruw.org/0x952C15AB751A65F6"
+
 [[menu.main]]
 name = "Все посты"
 url = "/posts"
