@@ -5,7 +5,7 @@ date: 2023-05-12T18:20:00+05:00
 tags: [linux, astra, tls]
 ---
 ## Получение корневого сертификата
-```
+```shell
 echo quit | openssl s_client -showcerts \
 	-servername <websi.te> -connect <websi.te>:443 > <certificate>.crt
 ```
