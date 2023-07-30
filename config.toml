@@ -1,4 +1,4 @@
-baseURL = "https://fruworg.github.io/"
+baseURL = "https://fruw.org/"
 anguageCode = "ru-RU"
 title = "фрув.орг"
 theme = "themu"
@@ -7,7 +7,6 @@ pygmentsstyle = "fruity"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 paginate = 4
-timeZone = "Asia/Bishkek"
 
 [params]
 	description = "всем привет!"
