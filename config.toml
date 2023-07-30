@@ -10,9 +10,10 @@ paginate = 4
 
 [params]
 	description = "всем привет!"
-	subtitle = ["   (@_  добро пожаловать на мой",
-	"\\\_\   open-source веб-сайт!",
-	"<____)  12.12.12 12:56 UTC+6"]
+	subtitle = """
+   (@_  добро пожаловать на мой \
+\\\_\   open-source веб-сайт! \
+<____)  12.12.12 12:56 UTC+6"""
 
 [[params.social]]
 name = "uptime"
