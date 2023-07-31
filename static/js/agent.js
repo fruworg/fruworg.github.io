@@ -6,12 +6,12 @@ const os = getOperatingSystem(userAgent);
 // Функция для определения браузера
 function getBrowser(userAgent) {
   const browsers = {
-    Chrome: /Chrome\/([0-9.]+)/,
-    Firefox: /Firefox\/([0-9.]+)/,
-    Edge: /Edg\/([0-9.]+)/,
+    Chrome: /Chrome\/([0-9]+)/,
+    Firefox: /Firefox\/([0-9]+)/,
+    Edge: /Edg\/([0-9]+)/,
     IE: /Trident\/.+rv:([0-9]+)/,
-    Safari: /Safari\/([0-9.]+)/,
-    Opera: /Opera\/([0-9.]+)/,
+    Safari: /Safari\/([0-9]+)/,
+    Opera: /Opera\/([0-9]+)/,
   };
 
   for (const browser in browsers) {
@@ -49,6 +49,6 @@ function getOperatingSystem(userAgent) {
   return 'Unknown OS';
 }
 
-// Полученные значения записываем в элемент с id="ua-agent"
+// Полученные значения записываем в элемент с id="user-agentt"
 const uaInfoElement = document.getElementById("user-agent");
 uaInfoElement.textContent = `${browser}, ${os}`;
