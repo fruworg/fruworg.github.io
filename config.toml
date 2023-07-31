@@ -36,11 +36,16 @@ name = "pgp"
 url = "https://fruw.org/0x952C15AB751A65F6"
 
 [[menu.main]]
-name = "Все посты"
+name = "все посты"
 url = "/posts"
 weight = 1
 
 [[menu.main]]
-name = "Теги"
+name = "теги"
 url = "/tags"
 weight = 2
+
+[[menu.main]]
+name = "rss"
+url = "/index.xml"
+weight = 3
