@@ -37,7 +37,7 @@ name = "pgp"
 url = "https://fruw.org/0x952C15AB751A65F6"
 
 [[menu.main]]
-name = "все посты"
+name = "посты"
 url = "/posts"
 weight = 1
 
