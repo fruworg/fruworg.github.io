@@ -21,10 +21,10 @@ function fetchIPDetails(ip) {
 function updateDetailsOnPage(ipDetails) {
   if (ipDetails) {
     const ipElement = document.getElementById("ip");
-    ipElement.textContent = `IP: ${ipDetails.ip}, ASN: ${ipDetails.asn}`;
+    ipElement.textContent = `${ipDetails.ip}, ${ipDetails.asn}`;
 
     const countryElement = document.getElementById("country");
-    countryElement.textContent = `Country Code: ${ipDetails.countryCode}, City: ${ipDetails.city}, Org: ${ipDetails.org}`;
+    countryElement.textContent = `${ipDetails.countryCode}, ${ipDetails.city}, ${ipDetails.org}`;
   }
 }
 
