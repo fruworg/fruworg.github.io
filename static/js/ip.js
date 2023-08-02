@@ -1,15 +1,15 @@
- // JavaScript
 function fetchIPDetails(ip) {
-  const url = `http://ip-api.com/json/${ip}`;
+  const url = `https://ipapi.co/${ip}/json`;
 
   return fetch(url)
     .then((response) => response.json())
     .then((data) => {
       return {
-        ip: data.query,
-        isp: data.as,
-        countryCode: data.countryCode,
+        ip: data.ip,
+        asn: data.asn,
+        countryCode: data.country_code,
         city: data.city,
+        org: data.org,
       };
     })
     .catch((error) => {
@@ -21,14 +21,13 @@ function fetchIPDetails(ip) {
 function updateDetailsOnPage(ipDetails) {
   if (ipDetails) {
     const ipElement = document.getElementById("ip");
-    ipElement.textContent = `IP: ${ipDetails.ip}, ISP: ${ipDetails.isp}`;
+    ipElement.textContent = `IP: ${ipDetails.ip}, ASN: ${ipDetails.asn}`;
 
     const countryElement = document.getElementById("country");
-    countryElement.textContent = `Country Code: ${ipDetails.countryCode}, City: ${ipDetails.city}`;
+    countryElement.textContent = `Country Code: ${ipDetails.countryCode}, City: ${ipDetails.city}, Org: ${ipDetails.org}`;
   }
 }
 
-// Функция для получения IP пользователя
 function getIPAddress() {
   fetch("https://api.ipify.org?format=json")
     .then((response) => response.json())
@@ -43,5 +42,4 @@ function getIPAddress() {
     });
 }
 
-// Вызываем функцию для получения IP и данных по IP
 getIPAddress();
