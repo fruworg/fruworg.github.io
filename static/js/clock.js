@@ -23,7 +23,7 @@ function updateClock() {
     const minutes = formatNumber(currentDateTime.getUTCMinutes());
     const seconds = formatNumber(currentDateTime.getUTCSeconds());
 
-    const dateTimeString = `${date}.${month}.${year} ${hours}:${minutes}:${seconds} UTC+6`;
+    const dateTimeString = `${date}.${month}.${year}, ${hours}:${minutes}:${seconds}, UTC+6`;
     timeElement.innerText = dateTimeString;
   }
 }
