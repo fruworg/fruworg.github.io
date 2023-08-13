@@ -35,8 +35,9 @@ ldapsearch -x -b "dc=<domain>,dc=<local>" \
 ```
 
 ## Правка pg_hba.conf
+С ldapprefix/ldapsuffix, возможно, придётся поколдовать. Стоит попробовать их оставить пустыми (="").
 ```shell
-host	<database>	<user>	<ip>/<mask>	ldap	ldapserver=<dc>.<domain>.<local>	ldapprefix="cn="	ldapsuffix=",cn=users,dc=<domain>,dc=<local>"
+host <database> <user> <ip>/<mask> ldap ldapserver=<dc>.<domain>.<local> ldapscheme=ldaps ldapprefix="cn=" ldapsuffix=",cn=users,dc=<domain>,dc=<local>"
 
 # /var/lib/pgpro/std-14/data/pg_hba.conf
 ```
