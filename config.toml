@@ -9,8 +9,8 @@ pygmentscodefencesguesssyntax = true
 paginate = 4
 
 [params]
-	description = "всем привет!"
-	subtitlefile = true
+description = "всем привет!"
+subtitlefile = true
 
 [[params.social]]
 name = "mail"
