@@ -33,7 +33,7 @@ name = "keybase"
 url = "//keybase.io/fruworg/"
 
 [[params.social]]
-name = "uptime"
+name = "up"
 url = "//up.fruw.org"
 
 [[params.social]]
