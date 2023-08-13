@@ -13,28 +13,32 @@ paginate = 4
 	subtitlefile = true
 
 [[params.social]]
-name = "uptime"
-url = "https://up.fruw.org"
-
-[[params.social]]
-name = "git"
-url = "https://github.com/fruworg"
-
-[[params.social]]
 name = "mail"
 url = "mailto:im@fruw.org"
 
 [[params.social]]
 name = "matrix"
-url = "https://matrix.to/#/@im:fruw.org"
+url = "//matrix.to/#/@im:fruw.org"
 
 [[params.social]]
 name = "tg"
-url = "https://t.me/fruworg"
+url = "//t.me/fruworg"
 
 [[params.social]]
 name = "pgp"
-url = "https://fruw.org/0x952C15AB751A65F6"
+url = "//keybase.io/fruworg/pgp_keys.asc"
+
+[[params.social]]
+name = "keybase"
+url = "//keybase.io/fruworg/"
+
+[[params.social]]
+name = "uptime"
+url = "//up.fruw.org"
+
+[[params.social]]
+name = "git"
+url = "//github.com/fruworg"
 
 [[menu.main]]
 name = "посты"
