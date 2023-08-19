@@ -57,7 +57,8 @@ chmod +x /usr/local/bin/rubyc
 ## Установка rubyc (stable, 2.4, не рекомендую)
 
 ```shell
-wget -P /tmp https://gw.alipayobjects.com/os/enclose-prod/1fd23e6b-d48f-4ed0-94dd-f0f539960253/rubyc-v0.4.0-linux-x64.gz
+wget -P /tmp https://gw.alipayobjects.com/os/enclose-prod\
+/1fd23e6b-d48f-4ed0-94dd-f0f539960253/rubyc-v0.4.0-linux-x64.gz
 gzip -d /tmp/rubyc-v0.4.0-linux-x64.gz
 mv /tmp/rubyc-v0.4.0-linux-x64 /usr/local/bin/rubyc
 chmod +x /usr/local/bin/rubyc 
