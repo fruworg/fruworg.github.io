@@ -1,7 +1,0 @@
-# Dependabot
-version: 2
-updates:
-  - package-ecosystem: gitsubmodule
-    schedule:
-        interval: "daily"
-    directory: /
