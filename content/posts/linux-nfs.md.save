@@ -7,18 +7,18 @@ tags: [vmware]
 ## Настройка NFS-сервера
 
 ### Установка пакета
-```
+```shell
 apt install nfs-kernel-server
 ```
 
 ### Создание каталога, который будет расшарен
-```
+```shell
 sudo mkdir /nfs
 sudo chmod 777 /nfs
 ```
 
 ### Разрешаем сетевой доступ
-```
+```shell
 /nfs 	<client-ip>(rw,sync,no_root_squash,no_subtree_check)
 
 # /etc/exports
@@ -27,16 +27,16 @@ sudo chmod 777 /nfs
 ## Настройка NFS-клиента
 
 ### Установка пакета
-```
+```shell
 apt install nfs-common
 ```
 
 ### Запуск службы
-```
+``` shell
 systemctl enable --now rpcbind
 ```
 
 ### Автомонитрование
-```
+```shell
 <server-ip>:/nfs    /nfs    nfs    defaults    0 0
 ```

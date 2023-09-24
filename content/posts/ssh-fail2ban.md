@@ -5,12 +5,12 @@ date: 2022-11-29T13:41:00+05:00
 tags: [linux, ssh]
 ---
 ## Установка пакета fail2ban
-```
+```shell
 apt -y install fail2ban
 ```
 
 ## Правило для ssh
-```
+``` shell
 [sshd]
 enabled  = true
 port     = <ssh-port>
@@ -24,6 +24,6 @@ bantime  = 3600
 ```
 
 ## Перезапуск сервиса fail2ban
-```
+```shell
 systemctl restart fail2ban
 ```
