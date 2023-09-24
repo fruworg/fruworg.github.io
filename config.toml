@@ -11,7 +11,7 @@ paginate = 4
 [params]
 description = "всем привет!"
 subtitlefile = true
-og_image = "fruworg.png"
+og_image = "fruworg.jpg"
 
 [[params.social]]
 name = "mail"
