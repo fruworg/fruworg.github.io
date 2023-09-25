@@ -6,14 +6,13 @@ tags: [linux]
 ---
 ## Конфигурация клиента
 Неприятно, когда конфиг не даёт поменять себя ручками, да?
+В `/etc/dhcp/dhclient.conf` необходимо добавить строки перезаписи:
 
-```bash
+```sh
 supersede domain-name-servers <dns-1>, <dns-n>;
 supersede domain-name "<domain.local>";
-
-# /etc/dhcp/dhclient.conf
 ```
 
-```bash
+```shell
 systemctl restart networking
 ```

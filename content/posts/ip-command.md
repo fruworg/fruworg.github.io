@@ -5,25 +5,25 @@ description: Команда ip в Linux
 tags: [linux]
 ---
 ## Показать все интерфейсы
-```bash
+```shell
 ip a
 ip l
 ```
 
 ## Показать информацию по конкретному интерфейсу
-```bash
+```shell
 ip a show <interface>
 ip l show <interface>
 ```
 
 ## Изменить статус сетевого интерфейса
-```bash
+```shell
 ip l set <interface> down
 ip l set <interface> up
 ```
 
 ## Добавить или удалить адрес
-```bash
+```shell
 ip a add <ip-address/mask> dev <interface>
 ip a add brd <ip-address/mask> dev <interface>
 ip a del <ip-address> dev <interface>

@@ -27,16 +27,15 @@ hostnamectl set-hostname <hostname>
 ```
 
 ### Правка файла hosts
-Вместо правки файла hosts можно поднять DNS-сервер и сделать записи там.
-```shell
+Вместо правки файла `/etc/hosts` можно поднять DNS-сервер и сделать записи там.
+```sh
 <server-ip> <server-name.domain.name> <server-name>
 <client-ip> <client-name.domain.name> <client-name>
-
-# /etc/hosts
 ```
 
 ### Редактирование конфига Kerberos
-```shell
+В `/etc/krb5.conf` необходимо добавить данные а реалме и kdc:
+```sh
 [libdefaults]
         default_realm = <DOMAIN.NAME>
 
@@ -51,8 +50,6 @@ hostnamectl set-hostname <hostname>
 [domain_realm]
         <domain.name> = <DOMAIN.NAME>
         .<domain.name> = <DOMAIN.NAME>
-
-# /etc/krb5.conf
 ```
 
 ## Создание нового реалма (на сервере)
@@ -70,10 +67,10 @@ quit
 ```
 
 ### Разрешение административных прав 
-```shell
-<admin-name>/admin
+Добавляем администратора в `/etc/krb5kdc/kadm5.acl`:
 
-# /etc/krb5kdc/kadm5.acl
+```sh
+<admin-name>/admin
 ```
 
 ## Получение билета

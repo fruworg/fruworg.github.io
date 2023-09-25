@@ -6,24 +6,24 @@ tags: [linux, tls]
 ---
 ## Извлечение сертификата и ключа
 
-```bash
+```shell
 openssl pkcs12 -in <tls>.pfx -out <tls>.pem -nodes
 ```
 
 ## Извлечение сертификата
 
-```bash
+```shell
 openssl pkcs12 -in <tls>.pfx -clcerts -nokeys -out <cert>.pem
 ```
 
 ## Извлечение ключа
 
-```bash
+```shell
 openssl pkcs12 -in <tls>.pfx -nocerts -out <key>.tmp.pem
 ```
 
 ## Обеспароливание ключа
 
-```bash
+```shell
 openssl rsa -in <key>.tmp.pem -out <key>.pem
 ```

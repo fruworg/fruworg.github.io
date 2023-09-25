@@ -25,6 +25,7 @@ systemctl enable --now postgresql bareos-director bareos-filedaemon bareos-stora
 
 ### Создание пользователя для Bareos-webui и конфига клиента
 Веб Bareos'а находится по адресу: `http://<bareos-ip>/bareos-webui/`
+
 ```shell
 bconsole
 configure add console name=<web-user> password=<web-pass> profile=webui-admin tlsenable=no
@@ -34,6 +35,8 @@ exit
 ```
 
 ### Бэкап определённой папки
+В файл `/etc/bareos/bareos-dir.d/fileset/<name>.conf` необходимо добавить настройку бэкапа определённой папки:
+
 ```shell
 FileSet {
   Name = "<name>"
@@ -45,8 +48,6 @@ FileSet {
     File = "<directory>"
   }
 }
-
-# /etc/bareos/bareos-dir.d/fileset/<name>.conf
 ```
 
 ## Конфигурация клиента

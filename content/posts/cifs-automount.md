@@ -10,12 +10,12 @@ apt install cifs-utils -y
 ```
 
 ## Создание файла с данными УЗ 
-```shell
+В файл `/root/.smbuser` необходимо добавить данные УЗ для подключения к шаре:
+
+```sh
 username=<username>
 password=<password>
 domain=<domain>
-
-# /root/.smbuser
 ```
 
 ## Смена прав на файл с данными УЗ
@@ -24,10 +24,9 @@ sudo chmod 0400 /root/.smbuser
 ```
 
 ## Развёртывание 
-```shell
+В `/etc/fstab` необходимо добавить строку подключения к шаре:
+```sh
 //<address> /<folder> cifs credentials=/root/.smbuser,uid=<uid>,gid=<gid> 0 0
-
-# /etc/fstab
 ```
 
 ## Монтирование всех директорий

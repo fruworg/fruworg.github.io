@@ -6,13 +6,13 @@ tags: [linux, git, ssh]
 ---
 ## Генерация ключа
 
-```bash
+```shell
 ssh-keygen -t ed25519 -C "<your>@<ema.il>"
 ```
 
 ## Вывод публичного ключа
 
-```bash
+```shell
 cat ~/.ssh/id_ed25519.pub
 ```
 
@@ -22,6 +22,6 @@ cat ~/.ssh/id_ed25519.pub
 
 ## Аутентификация в GitHub
 
-```bash
+```shell
 git remote set-url origin git@github.com:<username>/<reponame>.git
 ```

@@ -5,7 +5,7 @@ description: Путём правки конфигурационных файло
 tags: [linux]
 ---
 ## Настройка DNS и домена
-```bash
+```shell
 search <domain>
 nameserver <dns-server>
 
@@ -13,7 +13,7 @@ nameserver <dns-server>
 ```
 
 ## Статика
-```bash
+```shell
 auto <interface>
 iface <interface> inet static
 	address <ip-address>
@@ -24,7 +24,7 @@ iface <interface> inet static
 ```
 
 ## DHCP
-```bash
+```shell
 auto <interface>
 iface <interface> inet dhcp
 

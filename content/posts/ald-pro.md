@@ -6,10 +6,10 @@ tags: [linux, astra, krb5]
 ---
 ## Создания сетевой видимости
 
-```shell
-<dc-ip> <dc-name>.<domain> <dc-name>
+В файл `/etc/hosts` необходимо добавить ip и fqdn DC:
 
-# /etc/hosts
+```sh
+<dc-ip> <dc-name>.<domain> <dc-name>
 ```
 
 ## Смена хостнейма
@@ -18,20 +18,20 @@ hostnamectl set-hostname <dc-name>.<domain>
 ```
 
 ## Добавление репозиториев ALD Pro
-```shell
+В файл `/etc/apt/sources.list.d/aldpro.list` необходимо добавить репозиторий ALD Pro:
+
+```sh
 deb https://download.astralinux.ru/aldpro/stable/repository-main/ 1.0.0 main
 deb https://download.astralinux.ru/aldpro/stable/repository-extended/ generic main
-
-# /etc/apt/sources.list.d/aldpro.list
 ```
 
 ## Выставление приоритета репозиториев
-```shell
+В файле `/etc/apt/preferences.d/aldpro` необходимо выставить приоритет репозиториев:
+
+```sh
 Package: *
 Pin: release n=generic
 Pin-Priority: 900
-
-# /etc/apt/preferences.d/aldpro
 ```
 
 ## Установка пакета
@@ -44,6 +44,5 @@ DEBIAN_FRONTEND=noninteractive apt-get install -q -y aldpro-mp
 сервер ALD Pro будет доступен по адресу: `https://<dc-name>.<domain>`
 
 ```shell
-/opt/rbta/aldpro/mp/bin/aldpro-server-install.sh \
-	-d <domain> -n <dc-name> -p <password> --ip <dc-ip>
+/opt/rbta/aldpro/mp/bin/aldpro-server-install.sh -d <domain> -n <dc-name> -p <password> --ip <dc-ip>
 ```

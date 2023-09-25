@@ -7,12 +7,11 @@ tags: [linux, astra, krb5, freeipa]
 ## Общая настройка
 
 ### Создания сетевой видимости
+На клиенте и DC необходимо в файл `/etc/hosts` добавить оба ip и fqdn:
 
-```shell
+```sh
 <server-ip> <server-name>.<domain> <server-name>
 <client-ip> <client-name>.<domain> <client-name>
-
-# /etc/hosts
 ```
 
 ## Настройка cервера
