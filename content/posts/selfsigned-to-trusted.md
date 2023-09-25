@@ -6,8 +6,7 @@ tags: [linux, astra, alt, tls]
 ---
 ## Получение корневого сертификата
 ```shell
-echo quit | openssl s_client -showcerts \
-	-servername <websi.te> -connect <websi.te>:443 > <certificate>.pem
+echo quit | openssl s_client -showcerts -servername <websi.te> -connect <websi.te>:443 > <certificate>.pem
 ```
 
 ## Astra Linux

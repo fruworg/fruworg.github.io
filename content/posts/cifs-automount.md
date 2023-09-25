@@ -37,6 +37,5 @@ mount -a
 
 ## Монтирование ручками (необязательно)
 ```shell
-mount -t cifs //<address> /<folder> -o \
-	username=<username>,password=<password>,domain=<domain>
+mount -t cifs //<address> /<folder> -o username=<username>,password=<password>,domain=<domain>
 ```

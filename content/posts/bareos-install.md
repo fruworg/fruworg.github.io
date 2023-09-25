@@ -24,7 +24,7 @@ systemctl enable --now postgresql bareos-director bareos-filedaemon bareos-stora
 ```
 
 ### Создание пользователя для Bareos-webui и конфига клиента
-Веб Bareos'а находится по адресу: [http://\<bareos-ip\>/bareos-webui/](http://localhost/bareos-webui/)
+Веб Bareos'а находится по адресу: `http://<bareos-ip>/bareos-webui/`
 ```shell
 bconsole
 configure add console name=<web-user> password=<web-pass> profile=webui-admin tlsenable=no
@@ -60,8 +60,7 @@ apt install bareos-filedaemon
 
 ### Перенос конфига с сервера на клиент
 ```shell
-scp <user>@<server-ip>:/etc/bareos/bareos-dir-export/client\
-	/<client-name>/bareos-fd.d/director/bareos-dir.conf/etc/bareos/bareos-fd.d/director/
+scp <user>@<server-ip>:/etc/bareos/bareos-dir-export/client /<client-name>/bareos-fd.d/director/bareos-dir.conf/etc/bareos/bareos-fd.d/director/
 ```
 
 ### Включение сервиса

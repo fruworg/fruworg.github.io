@@ -41,7 +41,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -q -y aldpro-mp
 
 ## Развёртывание 
 После того, как команда развёртывания отработает и сервер перезагрузитcя, 
-сервер ALD Pro будет доступен по адресу: https://\<dc-name\>.\<domain\>
+сервер ALD Pro будет доступен по адресу: `https://<dc-name>.<domain>`
 
 ```shell
 /opt/rbta/aldpro/mp/bin/aldpro-server-install.sh \

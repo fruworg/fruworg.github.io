@@ -30,8 +30,7 @@ URI 		ldaps://<dc>.<domain>.<local>:636
 
 ## Проверка ldap
 ```shell
-ldapsearch -x -b "dc=<domain>,dc=<local>" \
-	-H ldaps://<dc>.<domain>.<local>:636 -W -D <domain-user>
+ldapsearch -x -b "dc=<domain>,dc=<local>" -H ldaps://<dc>.<domain>.<local>:636 -W -D <domain-user>
 ```
 
 ## Правка pg_hba.conf

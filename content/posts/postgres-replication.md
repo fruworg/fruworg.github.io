@@ -51,8 +51,7 @@ systemctl restart postgres
 #### Выгрузка файлов с master
 ```shell
 rm -rf /var/lib/pgpro/std-13/data/*
-pg_basebackup -P -R -X stream -c fast -h <master-ip> -U postgres -D \
-	/var/lib/pgpro/std-13/data
+pg_basebackup -P -R -X stream -c fast -h <master-ip> -U postgres -D /var/lib/pgpro/std-13/data
 ```
 
 ## Репликация с архивом
