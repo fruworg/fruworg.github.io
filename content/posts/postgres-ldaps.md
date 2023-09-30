@@ -20,12 +20,12 @@ apt install ldap-utils -y
 ```
 
 ## Правка ldap конфига
-```shell
+В файл `/etc/ldap/ldap.conf` необходимо добавить следующие строки:
+
+```sh
 TLS_CACERT	/etc/ldap/<ad>.pem
 BASE		dc=<domain>,dc=<local>
 URI 		ldaps://<dc>.<domain>.<local>:636
-
-# /etc/ldap/ldap.conf
 ```
 
 ## Проверка ldap
@@ -34,11 +34,9 @@ ldapsearch -x -b "dc=<domain>,dc=<local>" -H ldaps://<dc>.<domain>.<local>:636 -
 ```
 
 ## Правка pg_hba.conf
-С ldapprefix/ldapsuffix, возможно, придётся поколдовать. Стоит попробовать их оставить пустыми (="").
-```shell
+С ldapprefix/ldapsuffix в файле `/var/lib/pgpro/std-14/data/pg_hba.conf`, возможно, придётся поколдовать. Стоит попробовать их оставить пустыми (="").
+```sh
 host <database> <user> <ip>/<mask> ldap ldapserver=<dc>.<domain>.<local> ldapscheme=ldaps ldapprefix="cn=" ldapsuffix=",cn=users,dc=<domain>,dc=<local>"
-
-# /var/lib/pgpro/std-14/data/pg_hba.conf
 ```
 
 ## Создание пользователя в Postgres

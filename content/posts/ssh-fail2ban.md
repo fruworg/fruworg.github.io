@@ -10,7 +10,7 @@ apt -y install fail2ban
 ```
 
 ## Правило для ssh
-``` shell
+```sh
 [sshd]
 enabled  = true
 port     = <ssh-port>

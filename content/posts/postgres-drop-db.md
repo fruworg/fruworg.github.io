@@ -11,7 +11,7 @@ psql
 ```
 
 Убиваем соединения с БД:
-```shell
+```psql
 SELECT	pg_terminate_backend (pid)
 FROM	pg_stat_activity
 WHERE	pg_stat_activity.datname = '<database_name>';
@@ -29,6 +29,6 @@ psql
 ```
 
 Дропаем БД:
-``` shell
+```psql
 DROP DATABASE <database_name> WITH (FORCE);
 ```

@@ -5,7 +5,7 @@ date: 2022-11-25T15:08:00+05:00
 tags: [vmware]
 ---
 ## Изменение конфига
-``` shell
+```sh
 vmx.fullpath = "/bin/vmx"
 isolation.tools.copy.disable="FALSE"
 isolation.tools.paste.disable="FALSE"

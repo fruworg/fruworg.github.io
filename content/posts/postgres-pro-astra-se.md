@@ -10,6 +10,7 @@ apt -y install gnupg
 wget -O - http://repo.postgrespro.ru/keys/GPG-KEY-POSTGRESPRO | apt-key add -
 echo "deb http://repo.postgrespro.ru/pgpro-14/astra-smolensk/1.7 1.7_x86-64 main" > /etc/apt/sources.list.d/pgpro.list
 ```
+
 ## Установка пакета
 ```shell
 apt update

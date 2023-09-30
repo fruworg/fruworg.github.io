@@ -18,10 +18,10 @@ chmod 777 /nfs
 ```
 
 ### Разрешение сетевого доступа
-```shell
-/nfs 	<client-ip>(rw,sync,no_root_squash,no_subtree_check)
+В файл `/etc/exports` необходимо добавить следующую строку:
 
-# /etc/exports
+```sh
+/nfs 	<client-ip>(rw,sync,no_root_squash,no_subtree_check)
 ```
 
 ## Настройка NFS-клиента
@@ -37,8 +37,8 @@ systemctl enable --now rpcbind
 ```
 
 ### Автомонитрование
+В файл `/etc/fstab` необходимо добавить следующую строку:
+
 ```shell
 <server-ip>:/nfs    /nfs    nfs    defaults    0 0
-
-# /etc/fstab
 ```

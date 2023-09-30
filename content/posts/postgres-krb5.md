@@ -44,19 +44,19 @@ q
 ```
 
 ### Изменение конфигруационного файла Postgres Pro
-```shell
+В файл `/var/lib/pgpro/std-*/data/postgresql.conf` необходимо добавить следующие строки:
+
+```sh
 krb_server_keyfile = 'postgres.keytab'
 listen_addresses = 'localhost, <pg-ip>'
-
-# /var/lib/pgpro/std-13/data/postgresql.conf
 ```
 
 ### Разрешение подключения 
-```shell
+В файл `/var/lib/pgpro/std-*/data/pg_hba.conf` необходимо добавить следующие строки:
+
+```sh
 hostgssenc all        postgres	 localhost/32   gss include_realm=0
 hostgssenc <database> <username> <client-ip>/32 gss include_realm=0
-
-# /var/lib/pgpro/std-13/data/pg_hba.conf
 ```
 
 ### Получение тикета от Kerberos

@@ -5,28 +5,28 @@ description: Путём правки конфигурационных файло
 tags: [linux]
 ---
 ## Настройка DNS и домена
+В файл `/etc/resolv.conf` необходимо добавить следующие строки:
+
 ```shell
 search <domain>
 nameserver <dns-server>
-
-# /etc/resolv.conf
 ```
 
 ## Статика
+В файл `/etc/network/interfaces.d/<interface>` необходимо добавить следующие строки:
+
 ```shell
 auto <interface>
 iface <interface> inet static
 	address <ip-address>
 	netmask <netmask>
 	gateway <gateway>
-
-# /etc/network/interfaces.d/<interface>
 ```
 
 ## DHCP
+В файл `/etc/network/interfaces.d/<interface>` необходимо добавить следующие строки:
+
 ```shell
 auto <interface>
 iface <interface> inet dhcp
-
-# /etc/network/interfaces.d/<interface>
 ```

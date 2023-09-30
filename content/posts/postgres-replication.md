@@ -22,36 +22,35 @@ psql -c "CREATE ROLE repuser WITH REPLICATION LOGIN ENCRYPTED PASSWORD '<passwor
 ```
 
 #### Разрешение подключения для slave
-Дописываем в конец файла:
-```shell
-host    replication    repuser    <slave-ip>/32    md5
+Дописываем в конец файла `/var/lib/pgpro/std-*/data/pg_hba.conf`:
 
-# /var/lib/pgpro/std-13/data/pg_hba.conf
+```sh
+host    replication    repuser    <slave-ip>/32    md5
 ```
 
 #### Реконфигурация 
-```shell
+В файл `/var/lib/pgpro/std-13/data/postgresql.conf` необходимо добавить следующие строки:
+
+```sh
 listen_addresses = 'localhost, <master-ip>'
 wal_level = hot_standby
 archive_mode = on
 archive_command = 'cd .'
 max_wal_senders = 8
 hot_standby = on
-
-# /var/lib/pgpro/std-13/data/postgresql.conf
 ```
 
 #### Перезапуск Postgres Pro
 ```shell
-systemctl restart postgres
+systemctl restart postgres*
 ```
 
 ### Настройка slave
 
 #### Выгрузка файлов с master
 ```shell
-rm -rf /var/lib/pgpro/std-13/data/*
-pg_basebackup -P -R -X stream -c fast -h <master-ip> -U postgres -D /var/lib/pgpro/std-13/data
+rm -rf /var/lib/pgpro/std-*/data/*
+pg_basebackup -P -R -X stream -c fast -h <master-ip> -U postgres -D /var/lib/pgpro/std-*/data
 ```
 
 ## Репликация с архивом
@@ -62,20 +61,19 @@ WAL-архивы будут складываться на NFS. Как сконф
 Необходимо смонтировать NFS на master и slave в одинаковые директории.
 
 ### Дополнение к реконфигурации 
-```shell
+В файл `/var/lib/pgpro/std-*/data/postgresql.conf` необходимо добавить следующие строки:
+
+```sh
 archive_command = 'test ! -f /nfs/%f && cp %p /nfs/%f'
 archive_cleanup_command = 'pg_archivecleanup -d /nfs %r 2>>cleanup.log'
-
-# /var/lib/pgpro/std-13/data/postgresql.conf
 ```
 
 ## Синхронный и асинхронный режим репликации
 При синхронной репликации, изменения применятся на основном сервере только после того, как они запишутся в WAL хотя бы одной реплики, а при асинхронной - сразу. 
 По умолчанию репликация работает в асинхронном режиме. 
-Для того, чтобы она работала в синхронном режиме, необходимо изменить две строки в конфигурационном файле Postgres Pro:
-```shell
+Для того, чтобы она работала в синхронном режиме, необходимо изменить две строки в конфигурационном файле Postgres Pro `/var/lib/pgpro/std-*/data/postgresql.conf`:
+
+```sh
 synchronous_commit = on
 synchronous_standby_names = 'pgsql_0_node_0'
-
-# /var/lib/pgpro/std-13/data/postgresql.conf
 ```
