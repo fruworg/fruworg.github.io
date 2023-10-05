@@ -19,11 +19,11 @@ openssl pkcs12 -in <tls>.pfx -clcerts -nokeys -out <cert>.pem
 ## Извлечение ключа
 
 ```shell
-openssl pkcs12 -in <tls>.pfx -nocerts -out <key>.tmp.pem
+openssl pkcs12 -in <tls>.pfx -nocerts -out <key>.tmp.key
 ```
 
 ## Обеспароливание ключа
 
 ```shell
-openssl rsa -in <key>.tmp.pem -out <key>.pem
+openssl rsa -in <key>.tmp.key -out <key>.key
 ```
