@@ -1,5 +1,5 @@
 baseURL = "https://fruw.org/"
-languageCode = "ru"
+languageCode = "ru-RU"
 title = "фруворг"
 theme = "themu"
 
