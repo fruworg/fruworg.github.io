@@ -65,7 +65,7 @@ chmod +x /usr/local/bin/rubyc
 ## Правка запускаемого файла собираемой утилиты
 
 В запускаемый файл `exe/<ruby-util>` (обычно лежит в exe или bin) необходимо добавить в самое начало следующие строки:
-```sh
+```config
 #!/usr/bin/env ruby
 
 require 'rubygems'

@@ -6,7 +6,7 @@ tags: [linux, postgres]
 ---
 ## Скрипт для бэкапа БД и глобальных объектов
 В файл `/home/<username>/pg-backup.sh` необходимо добавить следующие строки:
-```sh
+```config
 #!/usr/bin/env bash
 
 pg_dump -U <username> -h <pg-hostname> -Fc <db> --file=<db>-$(date '+%Y-%m-%d').dump
@@ -15,7 +15,7 @@ pg_dumpall -U <username> -h <pg-hostname> --globals --file=gb-$(date '+%Y-%m-%d'
 
 ## Файл cron с запуском скрипта (каждый день в 2:00)
 Необходимо дописать в конец `crontab -e -u <username>` следующие строки:
-```sh
+```config
 0 2 * * * /usr/bin/env bash /home/<username>/pg-backup.sh
 ```
 

@@ -28,14 +28,14 @@ hostnamectl set-hostname <hostname>
 
 ### Правка файла hosts
 Вместо правки файла `/etc/hosts` можно поднять DNS-сервер и сделать записи там.
-```sh
+```config
 <server-ip> <server-name.domain.name> <server-name>
 <client-ip> <client-name.domain.name> <client-name>
 ```
 
 ### Редактирование конфига Kerberos
 В `/etc/krb5.conf` необходимо добавить данные а реалме и kdc:
-```sh
+```config
 [libdefaults]
         default_realm = <DOMAIN.NAME>
 
@@ -69,7 +69,7 @@ quit
 ### Разрешение административных прав 
 Добавляем администратора в `/etc/krb5kdc/kadm5.acl`:
 
-```sh
+```config
 <admin-name>/admin
 ```
 

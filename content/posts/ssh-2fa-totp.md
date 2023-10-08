@@ -17,7 +17,7 @@ auth required pam_google_authenticator.so
 ```
 
 ## Правка конфига ssh
-```sh
+```config
 ChallengeResponseAuthentication yes
 
 # /etc/ssh/sshd_config
@@ -33,14 +33,14 @@ google-authenticator
 
 ## Управление факторами (необязательно)
 Включить запрос ключа при аутентификации:
-```sh
+```config
 AuthenticationMethods publickey,password publickey,keyboard-interactive
 
 # /etc/ssh/sshd_config
 ```
 
 Отключить запрос пароля при аутентификации:
-```sh
+```config
 #@include common-auth
 
 # /etc/pam.d/sshd

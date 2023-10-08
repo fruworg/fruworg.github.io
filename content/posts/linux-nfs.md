@@ -20,7 +20,7 @@ chmod 777 /nfs
 ### Разрешение сетевого доступа
 В файл `/etc/exports` необходимо добавить следующую строку:
 
-```sh
+```config
 /nfs 	<client-ip>(rw,sync,no_root_squash,no_subtree_check)
 ```
 

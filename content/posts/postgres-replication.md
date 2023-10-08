@@ -24,14 +24,14 @@ psql -c "CREATE ROLE repuser WITH REPLICATION LOGIN ENCRYPTED PASSWORD '<passwor
 #### Разрешение подключения для slave
 Дописываем в конец файла `/var/lib/pgpro/std-*/data/pg_hba.conf`:
 
-```sh
+```config
 host    replication    repuser    <slave-ip>/32    md5
 ```
 
 #### Реконфигурация 
 В файл `/var/lib/pgpro/std-13/data/postgresql.conf` необходимо добавить следующие строки:
 
-```sh
+```config
 listen_addresses = 'localhost, <master-ip>'
 wal_level = hot_standby
 archive_mode = on
@@ -63,7 +63,7 @@ WAL-архивы будут складываться на NFS. Как сконф
 ### Дополнение к реконфигурации 
 В файл `/var/lib/pgpro/std-*/data/postgresql.conf` необходимо добавить следующие строки:
 
-```sh
+```config
 archive_command = 'test ! -f /nfs/%f && cp %p /nfs/%f'
 archive_cleanup_command = 'pg_archivecleanup -d /nfs %r 2>>cleanup.log'
 ```
@@ -73,7 +73,7 @@ archive_cleanup_command = 'pg_archivecleanup -d /nfs %r 2>>cleanup.log'
 По умолчанию репликация работает в асинхронном режиме. 
 Для того, чтобы она работала в синхронном режиме, необходимо изменить две строки в конфигурационном файле Postgres Pro `/var/lib/pgpro/std-*/data/postgresql.conf`:
 
-```sh
+```config
 synchronous_commit = on
 synchronous_standby_names = 'pgsql_0_node_0'
 ```

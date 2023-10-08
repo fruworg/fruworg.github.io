@@ -14,7 +14,7 @@ tags: [linux, caddy]
 ### Caddy
 
 В Caddyfile необходимо добавить секцию с поддоменом для обновления whitelist (необходимо заменить [строку basic auth](https://caddyserver.com/docs/caddyfile/directives/basicauth)):
-```sh
+```config
 wh.<your.domain> {
         @block {
                 not client_ip {$WHITE_LIST}
@@ -32,7 +32,7 @@ wh.<your.domain> {
 ```
 
 Пример поддомена, доступ до которого разрешён только с IP из whitelist:
-```sh
+```config
 sub.<your.domain> {
         @block {
                 not client_ip {$WHITE_LIST}
@@ -45,7 +45,7 @@ sub.<your.domain> {
 ```
 
 В `caddy.service` необходимо добавить следующую строку в секцию `[Service]`:
-```sh
+```config
 Environment="WHITE_LIST=127.0.0.1/8"
 ```
 

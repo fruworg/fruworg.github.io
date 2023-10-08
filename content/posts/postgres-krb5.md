@@ -46,7 +46,7 @@ q
 ### Изменение конфигруационного файла Postgres Pro
 В файл `/var/lib/pgpro/std-*/data/postgresql.conf` необходимо добавить следующие строки:
 
-```sh
+```config
 krb_server_keyfile = 'postgres.keytab'
 listen_addresses = 'localhost, <pg-ip>'
 ```
@@ -54,7 +54,7 @@ listen_addresses = 'localhost, <pg-ip>'
 ### Разрешение подключения 
 В файл `/var/lib/pgpro/std-*/data/pg_hba.conf` необходимо добавить следующие строки:
 
-```sh
+```config
 hostgssenc all        postgres	 localhost/32   gss include_realm=0
 hostgssenc <database> <username> <client-ip>/32 gss include_realm=0
 ```

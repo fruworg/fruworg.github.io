@@ -22,7 +22,7 @@ apt install ldap-utils -y
 ## Правка ldap конфига
 В файл `/etc/ldap/ldap.conf` необходимо добавить следующие строки:
 
-```sh
+```config
 TLS_CACERT	/etc/ldap/<ad>.pem
 BASE		dc=<domain>,dc=<local>
 URI 		ldaps://<dc>.<domain>.<local>:636
@@ -35,7 +35,7 @@ ldapsearch -x -b "dc=<domain>,dc=<local>" -H ldaps://<dc>.<domain>.<local>:636 -
 
 ## Правка pg_hba.conf
 С ldapprefix/ldapsuffix в файле `/var/lib/pgpro/std-14/data/pg_hba.conf`, возможно, придётся поколдовать. Стоит попробовать их оставить пустыми (="").
-```sh
+```config
 host <database> <user> <ip>/<mask> ldap ldapserver=<dc>.<domain>.<local> ldapscheme=ldaps ldapprefix="cn=" ldapsuffix=",cn=users,dc=<domain>,dc=<local>"
 ```
 
