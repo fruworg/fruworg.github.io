@@ -26,6 +26,6 @@ pg_dropcluster <old-version> main
 ```
 
 ## Удаление пакетов старой версии PostgreSQL
-```
+```shell
 apt purge -y postgresql-<old-version> postgresql-client-<old-version>
 ```
