@@ -5,7 +5,7 @@ date: 2023-05-12T18:10:00+05:00
 tags: [linux, krb5]
 ---
 ## Установка пакета
-```ell
+```shell
 apt install cifs-utils -y
 ```
 
@@ -19,7 +19,7 @@ domain=<domain>
 ```
 
 ## Смена прав на файл с данными УЗ
-```ell
+```shell
 sudo chmod 0400 /root/.smbuser
 ```
 
@@ -30,11 +30,11 @@ sudo chmod 0400 /root/.smbuser
 ```
 
 ## Монтирование всех директорий
-```ell
+```shell
 mount -a
 ```
 
 ## Монтирование ручками (необязательно)
-```ell
+```shell
 mount -t cifs //<address> /<folder> -o username=<username>,password=<password>,domain=<domain>
 ```

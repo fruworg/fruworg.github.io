@@ -13,6 +13,6 @@ supersede domain-name-servers <dns-1>, <dns-n>;
 supersede domain-name "<domain.local>";
 ```
 
-```ell
+```shell
 systemctl restart networking
 ```

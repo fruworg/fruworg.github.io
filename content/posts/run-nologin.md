@@ -8,13 +8,13 @@ tags: [linux]
 
 В найденых файлах необходимо закомментить все строки с pam_nologin.so.
 
-```ell
+```shell
 cd /etc/pam.d
 nano $(grep -Rl "pam_nologin.so")
 ```
 
 ## Перезагружаем машину
 
-```ell
+```shell
 init 6
 ```

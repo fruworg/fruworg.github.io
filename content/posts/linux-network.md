@@ -7,7 +7,7 @@ tags: [linux]
 ## Настройка DNS и домена
 В файл `/etc/resolv.conf` необходимо добавить следующие строки:
 
-```ell
+```shell
 search <domain>
 nameserver <dns-server>
 ```
@@ -15,7 +15,7 @@ nameserver <dns-server>
 ## Статика
 В файл `/etc/network/interfaces.d/<interface>` необходимо добавить следующие строки:
 
-```ell
+```shell
 auto <interface>
 iface <interface> inet static
 	address <ip-address>
@@ -26,7 +26,7 @@ iface <interface> inet static
 ## DHCP
 В файл `/etc/network/interfaces.d/<interface>` необходимо добавить следующие строки:
 
-```ell
+```shell
 auto <interface>
 iface <interface> inet dhcp
 ```

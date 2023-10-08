@@ -13,7 +13,7 @@ tags: [linux, astra, krb5]
 ```
 
 ## Смена хостнейма
-```ell
+```shell
 hostnamectl set-hostname <dc-name>.<domain>
 ```
 
@@ -35,7 +35,7 @@ Pin-Priority: 900
 ```
 
 ## Установка пакета
-```ell
+```shell
 DEBIAN_FRONTEND=noninteractive apt-get install -q -y aldpro-mp
 ```
 
@@ -43,6 +43,6 @@ DEBIAN_FRONTEND=noninteractive apt-get install -q -y aldpro-mp
 После того, как команда развёртывания отработает и сервер перезагрузитcя, 
 сервер ALD Pro будет доступен по адресу: `https://<dc-name>.<domain>`
 
-```ell
+```shell
 /opt/rbta/aldpro/mp/bin/aldpro-server-install.sh -d <domain> -n <dc-name> -p <password> --ip <dc-ip>
 ```

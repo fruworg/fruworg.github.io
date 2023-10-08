@@ -12,24 +12,24 @@ echo "deb http://repo.postgrespro.ru/pgpro-14/astra-smolensk/1.7 1.7_x86-64 main
 ```
 
 ## Установка пакета
-```ell
+```shell
 apt update
 apt -y install postgrespro-std-14
 ```
 
 ## systemd
-```ell
+```shell
 /opt/pgpro/std-14/bin/pg-setup service enable --now
 ln -s /lib/systemd/system/postgrespro-std-14.service /etc/systemd/system/postgresql.service
 ```
 
 ## Обновление путей
-```ell
+```shell
 /opt/pgpro/std-14/bin/pg-wrapper links update
 ```
 
 ## Смена пароля postgres
-```ell
+```shell
 su - postgres
 psql -c "ALTER USER postgres PASSWORD '<password>';"
 ```

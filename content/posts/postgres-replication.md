@@ -12,12 +12,12 @@ tags: [linux, postgres, nfs]
 
 ### Конфигурация master
 Действия с Postgres Pro следует выполнять от имени пользователя postgres.
-```ell
+```shell
 su - postgres
 ```
 
 #### Создание пользователя для репликации
-```ell
+```shell
 psql -c "CREATE ROLE repuser WITH REPLICATION LOGIN ENCRYPTED PASSWORD '<password>';"
 ```
 
@@ -41,14 +41,14 @@ hot_standby = on
 ```
 
 #### Перезапуск Postgres Pro
-```ell
+```shell
 systemctl restart postgres*
 ```
 
 ### Настройка slave
 
 #### Выгрузка файлов с master
-```ell
+```shell
 rm -rf /var/lib/pgpro/std-*/data/*
 pg_basebackup -P -R -X stream -c fast -h <master-ip> -U postgres -D /var/lib/pgpro/std-*/data
 ```

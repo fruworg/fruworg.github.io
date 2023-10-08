@@ -10,12 +10,12 @@ AD необходимо дать роль CA и выпустить сертиф�
 ## Перенос сертификата
 Необходимо перенести выпущенный конечный сертификат на сервер СУБД и перекодировать следующей командой:
 
-```ell
+```shell
 openssl x509 -inform der -in <ad>.cer -out <ad>.pem
 ```
 
 ## Установка пакета ldap-utils
-```ell
+```shell
 apt install ldap-utils -y
 ```
 
@@ -29,7 +29,7 @@ URI 		ldaps://<dc>.<domain>.<local>:636
 ```
 
 ## Проверка ldap
-```ell
+```shell
 ldapsearch -x -b "dc=<domain>,dc=<local>" -H ldaps://<dc>.<domain>.<local>:636 -W -D <domain-user>
 ```
 
@@ -40,12 +40,12 @@ host <database> <user> <ip>/<mask> ldap ldapserver=<dc>.<domain>.<local> ldapsch
 ```
 
 ## Создание пользователя в Postgres
-```ell
+```shell
 psql -c "CREATE USER <domain-user>;"
 ```
 
 ## Перезапуск Postgres Pro
-```ell
+```shell
 systemctl restart postgres*
 ```
 

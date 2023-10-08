@@ -16,19 +16,19 @@ tags: [linux, ruby, gcc]
 
 ## Установка пакетов для сборки (и не только)
 
-```ell
+```shell
 apt -y install wget unzip gcc make autoconf squashfs-tools libtool bison gnupg
 ```
 
 ## Установка ruby (из пакета)
 
-```ell
+```shell
 apt -y install ruby ruby-dev
 ```
 
 ## Установка ruby (из исходников)
 
-```ell
+```shell
 wget -P /tmp https://cache.ruby-lang.org/pub/ruby/<ver.sion>/ruby-<ve.rsi.on>.tar.gz
 tar  -C /tmp -xvf /tmp/ruby-*.tar.gz
 cd /tmp/ruby-*/
@@ -39,7 +39,7 @@ make install
 
 ## Установка rubyc (форк, 3.1.3, рекомендую)
 
-```ell
+```shell
 wget -P /tmp https://github.com/ericbeland/ruby-packer/releases/download/3_1_3/linux-amd64.zip
 unzip /tmp/linux-amd64.zip -d /tmp
 mv /tmp/linux-amd64/rubyc /usr/local/bin
@@ -48,14 +48,14 @@ chmod +x /usr/local/bin/rubyc
 
 ## Установка rubyc (unstable, 2.7, не рекомендую)
 
-```ell
+```shell
 wget -P /usr/local/bin https://github.com/pmq20/ruby-packer/releases/download/linux-x64/rubyc
 chmod +x /usr/local/bin/rubyc 
 ```
 
 ## Установка rubyc (stable, 2.4, не рекомендую)
 
-```ell
+```shell
 wget -P /tmp https://gw.alipayobjects.com/os/enclose-prod/1fd23e6b-d48f-4ed0-94dd-f0f539960253/rubyc-v0.4.0-linux-x64.gz
 gzip -d /tmp/rubyc-v0.4.0-linux-x64.gz
 mv /tmp/rubyc-v0.4.0-linux-x64 /usr/local/bin/rubyc
@@ -75,7 +75,7 @@ require 'bundler/setup'
 ## Подготовка к сборке
 
 Необходимо собрать gem с помощью Bundle.
-```ell
+```shell
 gem install bundler
 bundle install
 bundle exec rake install
@@ -84,7 +84,7 @@ bundle exec rake install
 ## Сборка бинарника
 
 Собираем бинарник. Обязательно при этом необходимо молиться.
-```ell
+```shell
 cd <ruby-util-dir>
 rubyc -r . -d /tmp/ -o <ruby-util> exe/<ruby-util>
 ```

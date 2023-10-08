@@ -5,12 +5,12 @@ date: 2022-11-29T13:35:00+05:00
 tags: [linux, ssh]
 ---
 ## Установка пакета
-```ell
+```shell
 apt install -y openssh-server libpam-google-authenticator
 ```
 
 ## Правка конфига PAM
-```ell
+```shell
 auth required pam_google_authenticator.so
 
 # auth required pam_google_authenticator.so
@@ -27,7 +27,7 @@ ChallengeResponseAuthentication yes
 Следующая команда сконфигурирует TOTP.
 Запускать команду следует от имени того пользователя, 
 к которому будет инициализированно подключение.
-```ell
+```shell
 google-authenticator
 ```
 
@@ -47,6 +47,6 @@ AuthenticationMethods publickey,password publickey,keyboard-interactive
 ```
 
 ## Перезапуск сервиса ssh
-```ell
+```shell
 systemctl restart ssh
 ```

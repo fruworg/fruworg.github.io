@@ -11,7 +11,7 @@ tags: [linux, postgres, krb5]
 ## Конфигурация сервера Kerberos
 
 ### Добавление принципиала Postgres Pro
-```ell
+```shell
 kadmin.local
 addprinc <username>
 addprinc postgres
@@ -20,7 +20,7 @@ q
 ```
 
 ### Экспорт субъекта-службы
-```ell
+```shell
 ktutil
 add_entry -password -p postgres/<pg-hostname>@<DOMAIN.NAME> -k 1 -e aes256-cts-hmac-sha1-96
 wkt postgres.keytab
@@ -30,14 +30,14 @@ q
 ### Перенос субъекта-службы на сервер Postgres Pro
 Перенести keytab можно как угодно, главное, чтобы он находился в папке с конфигурационными файлами Postgres Pro.
 Я перенесу с помощью команды scp:
-```ell
+```shell
 scp postgres.keytab postgres@<pg-hostname>:/var/lib/pgpro/std-13/data/
 ```
 
 ## Конфигурация сервера Postgres Pro
 
 ### Включение ранее перенесённого keytab
-```ell
+```shell
 ktutil
 read_kt postgres.keytab
 q
@@ -60,18 +60,18 @@ hostgssenc <database> <username> <client-ip>/32 gss include_realm=0
 ```
 
 ### Получение тикета от Kerberos
-```ell
+```shell
 kinit postgres
 ```
 
 ## Конфигурация клиента
 
 ### Получение тикета от Kerberos
-```ell
+```shell
 kinit <username>
 ```
 
 ### Подключение к Postgres Pro
-```ell
+```shell
 psql -d <database> -h <pg-hostname> -U <username>
 ```

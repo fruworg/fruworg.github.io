@@ -7,7 +7,7 @@ tags: [linux, postgres, tls]
 ## Создание сертификата
 В этом посте я буду использовать самоподписанный сертификат, но сертификат от Let's Encrypt тоже подойдёт.
 Сертификат и ключ желательно держать в той же папке, где лежат конфиги Postgres Pro.
-```ell
+```shell
 openssl req -x509 -newkey rsa:4096 -keyout <key>.pem -out <cert>.pem -sha256 -days 365
 ```
 
@@ -28,12 +28,12 @@ hostssl <user> <database> <client-ip> scram-sha-256
 
 ## (ре)Генерация пароля
 В случае, если до этого хеш-алгоритм пароля был не scram-sha-256, то необходимо пересоздать пароль:
-```ell
+```shell
 psql -c \password
 ```
 
 ## Перезапуск Postgres Pro
-```ell
+```shell
 systemctl restart postgres*
 ```
 

@@ -20,7 +20,7 @@ pg_dumpall -U <username> -h <pg-hostname> --globals --file=gb-$(date '+%Y-%m-%d'
 ```
 
 ## Рестор файлов БД и глобальных объектов
-```ell
+```shell
 pg_restore -C -d postgres <dbname>-<date>.dump
 psql -U postgres < gb-<date>.dump
 ```

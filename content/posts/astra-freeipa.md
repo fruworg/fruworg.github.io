@@ -17,29 +17,29 @@ tags: [linux, astra, krb5, freeipa]
 ## Настройка cервера
 
 ### Смена хостнейма
-```ell
+```shell
 hostnamectl set-hostname <server-name>.<domain>
 ```
 
 ### Установка пакета
-```ell
+```shell
 apt install fly-admin-freeipa-server -y
 ```
 
 ### Развёртывание 
-```ell
+```shell
 astra-freeipa-server -d <domain> -n <server-name> -px -ip <server-ip> -o --dogtag -y
 ```
 
 ## Настройка клиента
 
 ### Смена хостнейма
-```ell
+```shell
 hostnamectl set-hostname <client-name>.<domain>
 ```
 
 ### Установка пакета
-```ell
+```shell
 apt install fly-admin-freeipa-client -y -px "--force"
 ```
 

@@ -50,24 +50,24 @@ Environment="WHITE_LIST=127.0.0.1/8"
 ```
 
 Необходимо перезагрузить `caddy`:
-```ell
+```shell
 systemctl daemon-reload
 systemctl restart caddy
 ```  
 
 ### envip
 Установка бинарника:
-```ell
+```shell
 mkdir /opt/envip
 wget https://github.com/fruworg/envip/raw/main/envip -O /opt/envip/envip
 ```
 
 Установка systemd-демона `envip`:
-```ell
+```shell
 wget https://raw.githubusercontent.com/fruworg/envip/main/envip.service -O /etc/systemd/system/envip.service
 ```
 
 Запуск envip:
-```ell
+```shell
 systemctl enable --now envip
 ```

@@ -7,14 +7,14 @@ tags: [linux, krb5]
 ## Конфигурация сервера
 
 ### Установка пакетов
-```ell
+```shell
 apt -y install krb5-kdc krb5-admin-server
 ```
 
 ## Конфигурация клиента
 
 ### Установка пакетов
-```ell
+```shell
 apt -y install krb5-user libpam-krb5
 ```
 
@@ -22,7 +22,7 @@ apt -y install krb5-user libpam-krb5
 На сервере и клиенте надо проделать следующие шаги:
 
 ### Смена hostname
-```ell
+```shell
 hostnamectl set-hostname <hostname>
 ```
 
@@ -55,12 +55,12 @@ hostnamectl set-hostname <hostname>
 ## Создание нового реалма (на сервере)
 
 ### Создание master key для БД krb5
-```ell
+```shell
 krb5_newrealm
 ```
 
 ### Создание учётной записи администратора
-```ell
+```shell
 kadmin.local
 addprinc <admin-name>/admin
 quit
@@ -74,10 +74,10 @@ quit
 ```
 
 ## Получение билета
-```ell
+```shell
 kinit <admin-name>\admin
 ```
 Проверяем наличие выданного билета:
-```ell
+```shell
 klist
 ```
