@@ -5,23 +5,23 @@ description: Небольшая памятка
 tags: [linux, astra]
 ---
 ## Установка пакета fly
-```bash
+```shell
 apt install fly-all-main
 ```
 
 ## Загрузка ОС с GUI по-умолчанию
-```bash
+```shell
 systemctl set-default graphical.target
 ```
 
 ## Примечание
 
 ### Посмотреть текущую конфигурацию загрузки
-```bash
+```shell
 systemctl get-default
 ```
 
 ### Вернуть загрузку ОС с CLI
-```bash
+```shell
 systemctl set-default multi-user.target
 ```
