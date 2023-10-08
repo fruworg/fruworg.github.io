@@ -17,7 +17,7 @@ tags: [linux, caddy]
 ```sh
 wh.<your.domain> {
         @block {
-                not remote_ip forwarded {$WHITE_LIST}
+                not client_ip {$WHITE_LIST}
         }
         handle @block {
                 basicauth {
@@ -27,20 +27,20 @@ wh.<your.domain> {
                         header_up X-Real-IP {remote_host}
                 }
         }
-        respond "IP already added! :)"
+        respond "IP bleached! :)"
 }
 ```
 
 Пример поддомена, доступ до которого разрешён только с IP из whitelist:
 ```sh
 sub.<your.domain> {
-        @allow {
-                remote_ip forwarded {$WHITE_LIST}
+        @block {
+                not client_ip {$WHITE_LIST}
         }
-        handle @allow {
-                reverse_proxy localhost:50001
+        handle @block {
+                redir https://wh.<your.domain>
         }
-        respond 403
+        reverse_proxy localhost:50001
 }
 ```
 
