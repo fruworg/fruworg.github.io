@@ -1,6 +1,6 @@
 baseURL = "https://fruw.org/"
-defaultContentLanguage = "ru"
 languageCode = "ru-RU"
+languageName = "Russian"
 title = "фруворг"
 theme = "themu"
 
