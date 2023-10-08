@@ -7,16 +7,16 @@ tags: [linux]
 ## Распаковка пакета
 
 ### Распаковка данных
-```shell
+```ell
 dpkg -x "<package>.deb" <folder>
 ```
 
 ### Распаковка метаданных
-```shell
+```ell
 dpkg -e "<package>.deb" <folder>/DEBIAN
 ```
 
 ## Сборка пакета
-```shell
+```ell
 dpkg -b <folder> "<package>.deb"
 ```

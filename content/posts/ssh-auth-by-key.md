@@ -5,11 +5,11 @@ date: 2022-12-14T12:04:00+05:00
 tags: [linux, ssh]
 ---
 ## Генерация ключа
-```shell
+```ell
 ssh-keygen
 ```
 
 ## Копировние ключв
-```shell
+```ell
 ssh-copy-id <username>@<server-ip>
 ```

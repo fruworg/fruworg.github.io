@@ -7,26 +7,26 @@ tags: [linux, postgres, bareos, apache]
 ## Конфигурация Сервера
 
 ### Установка Bareos и PostgreSQL
-```shell
+```ell
 curl -s https://download.bareos.org/current/Debian_10/add_bareos_repositories.sh | bash
 apt update
 apt install postgresql bareos bareos-webui
 ```
 
 ### Конфигурация БД
-```shell
+```ell
 dpkg-reconfigure bareos-database-common
 ```
 
 ### Включение сервисов Bareos, PostgreSQL и Apache
-```shell
+```ell
 systemctl enable --now postgresql bareos-director bareos-filedaemon bareos-storage apache2
 ```
 
 ### Создание пользователя для Bareos-webui и конфига клиента
 Веб Bareos'а находится по адресу: `http://<bareos-ip>/bareos-webui/`
 
-```shell
+```ell
 bconsole
 configure add console name=<web-user> password=<web-pass> profile=webui-admin tlsenable=no
 configure add client name=<client-name> address=<client-ip> password=<client-pass>
@@ -37,7 +37,7 @@ exit
 ### Бэкап определённой папки
 В файл `/etc/bareos/bareos-dir.d/fileset/<name>.conf` необходимо добавить настройку бэкапа определённой папки:
 
-```sh
+```
 FileSet {
   Name = "<name>"
   Description = "<description>"
@@ -53,18 +53,18 @@ FileSet {
 ## Конфигурация клиента
 
 ### Установка Bareos Filedaemon
-```shell
+```ell
 curl -s https://download.bareos.org/current/Debian_10/add_bareos_repositories.sh | bash
 apt update
 apt install bareos-filedaemon
 ```
 
 ### Перенос конфига с сервера на клиент
-```shell
+```ell
 scp <user>@<server-ip>:/etc/bareos/bareos-dir-export/client /<client-name>/bareos-fd.d/director/bareos-dir.conf/etc/bareos/bareos-fd.d/director/
 ```
 
 ### Включение сервиса
-```shell
+```ell
 systemctl enable --now bareos-filedaemon
 ```

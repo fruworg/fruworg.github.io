@@ -6,7 +6,7 @@ tags: [linux, postgres]
 ---
 ## На старой версии (<=12)
 Заходим в консоль Postgres:
-```shell
+```ell
 psql
 ```
 
@@ -18,13 +18,13 @@ WHERE	pg_stat_activity.datname = '<database_name>';
 ```
 
 Дропаем БД:
-```shell
+```ell
 DROP DATABASE <database_name>;
 ```
 
 ## На новой версии (>=13)
 Заходим в консоль Postgres:
-```shell
+```ell
 psql
 ```
 

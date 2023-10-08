@@ -8,19 +8,19 @@ tags: [linux, astra, krb5]
 
 В файл `/etc/hosts` необходимо добавить ip и fqdn DC:
 
-```sh
+```
 <dc-ip> <dc-name>.<domain> <dc-name>
 ```
 
 ## Смена хостнейма
-```shell
+```ell
 hostnamectl set-hostname <dc-name>.<domain>
 ```
 
 ## Добавление репозиториев ALD Pro
 В файл `/etc/apt/sources.list.d/aldpro.list` необходимо добавить репозиторий ALD Pro:
 
-```sh
+```
 deb https://download.astralinux.ru/aldpro/stable/repository-main/ 1.0.0 main
 deb https://download.astralinux.ru/aldpro/stable/repository-extended/ generic main
 ```
@@ -28,14 +28,14 @@ deb https://download.astralinux.ru/aldpro/stable/repository-extended/ generic ma
 ## Выставление приоритета репозиториев
 В файле `/etc/apt/preferences.d/aldpro` необходимо выставить приоритет репозиториев:
 
-```sh
+```
 Package: *
 Pin: release n=generic
 Pin-Priority: 900
 ```
 
 ## Установка пакета
-```shell
+```ell
 DEBIAN_FRONTEND=noninteractive apt-get install -q -y aldpro-mp
 ```
 
@@ -43,6 +43,6 @@ DEBIAN_FRONTEND=noninteractive apt-get install -q -y aldpro-mp
 После того, как команда развёртывания отработает и сервер перезагрузитcя, 
 сервер ALD Pro будет доступен по адресу: `https://<dc-name>.<domain>`
 
-```shell
+```ell
 /opt/rbta/aldpro/mp/bin/aldpro-server-install.sh -d <domain> -n <dc-name> -p <password> --ip <dc-ip>
 ```

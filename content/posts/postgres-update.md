@@ -6,22 +6,22 @@ tags: [linux, postgres]
 ---
 
 ## Листинг запущенных экземпляров PostgreSQL
-```shell
+```ell
 pg_lsclusters
 ```
 
 ## Остановка экземпляра PostgreSQL новой версии
-```shell
+```ell
 pg_dropcluster <new-version> main --stop
 ```
 
 ## Миграция со старой версии на новую
-```shell
+```ell
 pg_upgradecluster <old-version> main
 ```
 
 ## Дроп экземпляра PostgreSQL старой версии 
-```shell
+```ell
 pg_dropcluster <old-version> main
 ```
 

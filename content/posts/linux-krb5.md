@@ -7,14 +7,14 @@ tags: [linux, krb5]
 ## Конфигурация сервера
 
 ### Установка пакетов
-```shell
+```ell
 apt -y install krb5-kdc krb5-admin-server
 ```
 
 ## Конфигурация клиента
 
 ### Установка пакетов
-```shell
+```ell
 apt -y install krb5-user libpam-krb5
 ```
 
@@ -22,20 +22,20 @@ apt -y install krb5-user libpam-krb5
 На сервере и клиенте надо проделать следующие шаги:
 
 ### Смена hostname
-```shell
+```ell
 hostnamectl set-hostname <hostname>
 ```
 
 ### Правка файла hosts
 Вместо правки файла `/etc/hosts` можно поднять DNS-сервер и сделать записи там.
-```sh
+```
 <server-ip> <server-name.domain.name> <server-name>
 <client-ip> <client-name.domain.name> <client-name>
 ```
 
 ### Редактирование конфига Kerberos
 В `/etc/krb5.conf` необходимо добавить данные а реалме и kdc:
-```sh
+```
 [libdefaults]
         default_realm = <DOMAIN.NAME>
 
@@ -55,12 +55,12 @@ hostnamectl set-hostname <hostname>
 ## Создание нового реалма (на сервере)
 
 ### Создание master key для БД krb5
-```shell
+```ell
 krb5_newrealm
 ```
 
 ### Создание учётной записи администратора
-```shell
+```ell
 kadmin.local
 addprinc <admin-name>/admin
 quit
@@ -69,15 +69,15 @@ quit
 ### Разрешение административных прав 
 Добавляем администратора в `/etc/krb5kdc/kadm5.acl`:
 
-```sh
+```
 <admin-name>/admin
 ```
 
 ## Получение билета
-```shell
+```ell
 kinit <admin-name>\admin
 ```
 Проверяем наличие выданного билета:
-```shell
+```ell
 klist
 ```

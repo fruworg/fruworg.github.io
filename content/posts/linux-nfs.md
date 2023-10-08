@@ -7,12 +7,12 @@ tags: [linux, nfs]
 ## Настройка NFS-сервера
 
 ### Установка пакета
-```shell
+```ell
 apt -y install nfs-kernel-server
 ```
 
 ### Создание каталога, который будет расшарен
-```shell
+```ell
 mkdir /nfs
 chmod 777 /nfs
 ```
@@ -20,14 +20,14 @@ chmod 777 /nfs
 ### Разрешение сетевого доступа
 В файл `/etc/exports` необходимо добавить следующую строку:
 
-```sh
+```
 /nfs 	<client-ip>(rw,sync,no_root_squash,no_subtree_check)
 ```
 
 ## Настройка NFS-клиента
 
 ### Установка пакета
-```shell
+```ell
 apt -y install nfs-common
 ```
 
@@ -39,6 +39,6 @@ systemctl enable --now rpcbind
 ### Автомонитрование
 В файл `/etc/fstab` необходимо добавить следующую строку:
 
-```shell
+```ell
 <server-ip>:/nfs    /nfs    nfs    defaults    0 0
 ```

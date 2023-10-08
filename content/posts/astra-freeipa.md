@@ -9,7 +9,7 @@ tags: [linux, astra, krb5, freeipa]
 ### Создания сетевой видимости
 На клиенте и DC необходимо в файл `/etc/hosts` добавить оба ip и fqdn:
 
-```sh
+```
 <server-ip> <server-name>.<domain> <server-name>
 <client-ip> <client-name>.<domain> <client-name>
 ```
@@ -17,29 +17,29 @@ tags: [linux, astra, krb5, freeipa]
 ## Настройка cервера
 
 ### Смена хостнейма
-```shell
+```ell
 hostnamectl set-hostname <server-name>.<domain>
 ```
 
 ### Установка пакета
-```shell
+```ell
 apt install fly-admin-freeipa-server -y
 ```
 
 ### Развёртывание 
-```shell
+```ell
 astra-freeipa-server -d <domain> -n <server-name> -px -ip <server-ip> -o --dogtag -y
 ```
 
 ## Настройка клиента
 
 ### Смена хостнейма
-```shell
+```ell
 hostnamectl set-hostname <client-name>.<domain>
 ```
 
 ### Установка пакета
-```shell
+```ell
 apt install fly-admin-freeipa-client -y -px "--force"
 ```
 

@@ -12,26 +12,26 @@ tags: [linux, postgres, nfs]
 
 ### Конфигурация master
 Действия с Postgres Pro следует выполнять от имени пользователя postgres.
-```shell
+```ell
 su - postgres
 ```
 
 #### Создание пользователя для репликации
-```shell
+```ell
 psql -c "CREATE ROLE repuser WITH REPLICATION LOGIN ENCRYPTED PASSWORD '<password>';"
 ```
 
 #### Разрешение подключения для slave
 Дописываем в конец файла `/var/lib/pgpro/std-*/data/pg_hba.conf`:
 
-```sh
+```
 host    replication    repuser    <slave-ip>/32    md5
 ```
 
 #### Реконфигурация 
 В файл `/var/lib/pgpro/std-13/data/postgresql.conf` необходимо добавить следующие строки:
 
-```sh
+```
 listen_addresses = 'localhost, <master-ip>'
 wal_level = hot_standby
 archive_mode = on
@@ -41,14 +41,14 @@ hot_standby = on
 ```
 
 #### Перезапуск Postgres Pro
-```shell
+```ell
 systemctl restart postgres*
 ```
 
 ### Настройка slave
 
 #### Выгрузка файлов с master
-```shell
+```ell
 rm -rf /var/lib/pgpro/std-*/data/*
 pg_basebackup -P -R -X stream -c fast -h <master-ip> -U postgres -D /var/lib/pgpro/std-*/data
 ```
@@ -63,7 +63,7 @@ WAL-архивы будут складываться на NFS. Как сконф
 ### Дополнение к реконфигурации 
 В файл `/var/lib/pgpro/std-*/data/postgresql.conf` необходимо добавить следующие строки:
 
-```sh
+```
 archive_command = 'test ! -f /nfs/%f && cp %p /nfs/%f'
 archive_cleanup_command = 'pg_archivecleanup -d /nfs %r 2>>cleanup.log'
 ```
@@ -73,7 +73,7 @@ archive_cleanup_command = 'pg_archivecleanup -d /nfs %r 2>>cleanup.log'
 По умолчанию репликация работает в асинхронном режиме. 
 Для того, чтобы она работала в синхронном режиме, необходимо изменить две строки в конфигурационном файле Postgres Pro `/var/lib/pgpro/std-*/data/postgresql.conf`:
 
-```sh
+```
 synchronous_commit = on
 synchronous_standby_names = 'pgsql_0_node_0'
 ```
