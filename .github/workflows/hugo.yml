@@ -55,7 +55,6 @@ jobs:
           HUGO_ENV: production
         run: |
           hugo \
-            --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
@@ -80,11 +79,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - name: test
-      run: ls -alh 
+    - uses: actions/checkout@v3
+    - uses: actions/download-artifact@v3
+      with:
+        path: public
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-        cleanup: false
-        dist_dir: ./
+        cleanup: true
+        dist_dir: public
