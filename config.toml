@@ -32,8 +32,8 @@ name = "pgp"
 url = "//keybase.io/fruworg/pgp_keys.asc"
 
 [[params.social]]
-name = "keybase"
-url = "//keybase.io/fruworg/"
+name = "keyoxide"
+url = "//keyoxide.org/im@fruw.org"
 
 [[params.social]]
 name = "up"
