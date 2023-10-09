@@ -83,8 +83,12 @@ jobs:
     - uses: actions/download-artifact@v3
       with:
         path: .
-    - name: untar
-      run: mkdir public && tar xf github-pages/artifact.tar -C public
+    - name: Create directory
+      run: mkdir public
+    - name: Unapacking artifact
+      run: tar xf github-pages/artifact.tar -C public
+    - name: Change URI
+      run: find public -type f -exec sed -i 's/github.io/neocities.org/g' {} +
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
