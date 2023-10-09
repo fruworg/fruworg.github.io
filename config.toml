@@ -60,5 +60,5 @@ weight = 3
 
 [[menu.main]]
 name = "webring"
-url = "//webring.fruw.org"
+url = "/webring.html"
 weight = 4
