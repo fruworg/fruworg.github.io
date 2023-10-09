@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Hugo site to GitHub Pages
-name: Deploy Hugo site to Pages
+name: Deploy Hugo site to Pages * Neocities
 
 on:
   # Runs on pushes targeting the default branch
@@ -63,7 +63,7 @@ jobs:
           path: ./public
 
   # Deployment job
-  deploy-hugo:
+  deploy-page:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - name: Deploy to NeoCities
+    - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
