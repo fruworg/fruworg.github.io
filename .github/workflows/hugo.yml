@@ -80,6 +80,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+    - name: test
+      run: ls -alh 
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
