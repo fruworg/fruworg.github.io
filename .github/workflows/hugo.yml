@@ -89,6 +89,8 @@ jobs:
       run: tar xf github-pages/artifact.tar -C public
     - name: Change URI
       run: find public -type f -exec sed -i 's/\/\/fruworg.github.io/\/\/fruworg.neocities.org/g' {} +
+    - name: Rename 404 page
+      run: mv public/404.html public/not_found.html
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
