@@ -29,7 +29,7 @@ url = "//t.me/fruworg"
 
 [[params.social]]
 name = "pgp"
-url = "//keybase.io/fruworg/pgp_keys.asc"
+url = "//keys.openpgp.org/pks/lookup?op=get&options=mr&search=im@fruw.org"
 
 [[params.social]]
 name = "keyoxide"
