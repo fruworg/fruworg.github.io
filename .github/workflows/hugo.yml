@@ -84,7 +84,7 @@ jobs:
       with:
         path: .
     - name: untar
-      run: tar xf github-pages/artifact.tar -C public
+      run: ls -alh && tar xf github-pages/artifact.tar -C public
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
