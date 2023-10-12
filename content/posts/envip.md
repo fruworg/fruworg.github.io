@@ -6,14 +6,14 @@ tags: [linux, caddy]
 ---
 
 ## envip
-[Небольшая утилита](https://github.com/fruworg/envip), которая позволяет реализовать динамический whitelist для caddy:
+[Небольшая утилита](//github.com/fruworg/envip), которая позволяет реализовать динамический whitelist для caddy:
 Часть поддоменов будут доступны списку явно разрешённых IP.
 Список IP автоматически пополняется при успешном прохождении basic auth на отдельном поддомене.
 
 ## Установка
 ### Caddy
 
-В Caddyfile необходимо добавить секцию с поддоменом для обновления whitelist (необходимо заменить [строку basic auth](https://caddyserver.com/docs/caddyfile/directives/basicauth)):
+В Caddyfile необходимо добавить секцию с поддоменом для обновления whitelist (необходимо заменить [строку basic auth](//caddyserver.com/docs/caddyfile/directives/basicauth)):
 ```config
 wh.<your.domain> {
         @block {

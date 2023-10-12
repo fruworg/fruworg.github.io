@@ -6,10 +6,10 @@ tags: [linux, security]
 ---
 
 ## Введение
-Эта статья является переводом [странички из вики Debian.](https://wiki.debian.org/SecurityManagement/fingerprint%20authentication)
+Эта статья является переводом [странички из вики Debian.](//wiki.debian.org/SecurityManagement/fingerprint%20authentication)
 
 ## Установка пакетов для функционирования сканера
-[Список поддерживаемых устройств](https://fprint.freedesktop.org/supported-devices.html).
+[Список поддерживаемых устройств](//fprint.freedesktop.org/supported-devices.html).
 ```shell
 apt install fprintd libpam-fprintd
 ```
