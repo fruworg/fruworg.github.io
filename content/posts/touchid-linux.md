@@ -4,6 +4,7 @@ description: Для входа в систему и использования s
 date: 2023-10-13T02:25:00+05:00
 tags: [linux, security]
 ---
+
 ## Введение
 Эта статья является переводом [странички из вики Debian.](https://wiki.debian.org/SecurityManagement/fingerprint%20authentication)
 
