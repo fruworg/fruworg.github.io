@@ -1,7 +1,7 @@
 ---
 title: Использование отпечатка пальца в vaultwarden
 description: Конфигурация использования отпечатка пальца в расширении для браузера bitwarden/vaultwarden на ОС GNU/Linux
-date: 2023-10-13T23:02:35+05:00
+date: 2023-10-13T03:15:00+06:00
 tags: [linux, security]
 ---
 
