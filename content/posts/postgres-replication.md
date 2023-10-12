@@ -5,7 +5,7 @@ date: 2022-11-25T16:51:00+05:00
 tags: [linux, postgres, nfs]
 ---
 ## Установка Postgres Pro
-Процесс установки описан в [этом посте](//fruw.org/posts/postgres-pro-astra-se).
+Процесс установки описан в [этом посте](/posts/postgres-pro-astra-se).
 
 ## Потоковая репликация
 Про различия в реализациях репликаций можно почитать вот [здесь](//edu.postgrespro.ru/dba3/dba3_04_replica_physical.pdf).
@@ -57,7 +57,7 @@ pg_basebackup -P -R -X stream -c fast -h <master-ip> -U postgres -D /var/lib/pgp
 Настройка репликации с архивом выролняется с некоторыми отличиями от потоковой репликации:
 
 ### Развёртывание NFS
-WAL-архивы будут складываться на NFS. Как сконфигурировать NFS написано [здесь](//fruw.org/posts/linux-nfs).
+WAL-архивы будут складываться на NFS. Как сконфигурировать NFS написано [здесь](/posts/linux-nfs).
 Необходимо смонтировать NFS на master и slave в одинаковые директории.
 
 ### Дополнение к реконфигурации 

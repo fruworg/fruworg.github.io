@@ -4,8 +4,9 @@ description: Используя протокол GSSAPI
 date: 2022-11-29T16:21:00+05:00
 tags: [linux, postgres, krb5]
 ---
+
 ## Установка Kerberos и Postgres Pro
-Для начала, необходимо установить [Postgres Pro](//fruw.org/posts/postgres-pro-astra-se) и [Kerberos](//fruw.org/posts/linux-krb5).
+Для начала, необходимо установить [Postgres Pro](/posts/postgres-pro-astra-se) и [Kerberos](/posts/linux-krb5).
 На машину с Postgres Pro Kerberos устанавливается также, как и на клиента.
 
 ## Конфигурация сервера Kerberos

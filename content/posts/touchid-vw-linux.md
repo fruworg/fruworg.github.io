@@ -6,6 +6,7 @@ tags: [linux, security]
 ---
 
 ## Клонирование и сборка утилиты
+Перед началом необходимо [настроить работу сканера отпечатка пальцев](/posts/touchid-linux/).
 
 ```bash
 git clone https://github.com/quexten/bw-bio-handler /tmp/bw
