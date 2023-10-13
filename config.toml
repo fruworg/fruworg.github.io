@@ -33,7 +33,7 @@ url = "//keys.openpgp.org/pks/lookup?op=get&options=mr&search=im@fruw.org"
 
 [[params.social]]
 name = "keyoxide"
-url = "https://keyoxide.org/86a5f8191783e6f1"
+url = "//keyoxide.org/86a5f8191783e6f1"
 
 [[params.social]]
 name = "up"
