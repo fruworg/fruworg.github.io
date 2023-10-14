@@ -1,2 +1,2 @@
-Небольшой сайтик на `HUGO`. </br>
-Зеркала: [раз](//fruw.org), [два](//fruworg.neocities.org) и [три](//fruworg.github.io).
+# Небольшой сайтик на `HUGO`. </br>
+Зеркала: [раз](//fruw.org), [два](//fruworg.neocities.org), [три](//fruworg.pages.dev) и [четыре](//fruworg.github.io).
