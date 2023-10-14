@@ -56,6 +56,8 @@ jobs:
         run: |
           hugo \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Change color
+        run: sed -i 's/peachpuff/rebeccapurple/g' public/css/main.*.css 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
@@ -91,6 +93,8 @@ jobs:
       run: find public -type f -exec sed -i 's/\/\/fruworg.github.io/\/\/fruworg.neocities.org/g' {} +
     - name: Rename 404 page
       run: mv public/404.html public/not_found.html
+    - name: Change color
+      run: sed -i 's/rebeccapurple/mediumseagreen/g' public/css/main.*.css 
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
