@@ -1,7 +1,7 @@
 ---
 title: Подключение через RDG с GNU/Lunux
 description: wlfreerdp/xfreerdp 
-date: 2023-10-16T23:06:00+05:00
+date: 2023-10-16T23:06:00+06:00
 tags: [linux, windows]
 ---
 
