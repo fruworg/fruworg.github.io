@@ -8,5 +8,5 @@ tags: [linux, windows]
 ## Подключение
 Если используешь иксы, то вместо `wlfreerdp` пиши `xfreerdp`:
 ```bash
-wlfreerdp /gu:<username> /u:<username> /gp:<password> /p:<password> /v:<vm-fqdn> /g:<rdg-fqdnd> /sound /microphone:sys:alsa,dev:hw:0,0 /f
+wlfreerdp /gu:<username> /u:<username> /gp:<password> /p:<password> /v:<vm-fqdn> /g:<rdg-fqdn> /sound /microphone:sys:alsa,dev:hw:0,0 /f
 ```
