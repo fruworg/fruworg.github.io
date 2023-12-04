@@ -1,6 +1,6 @@
 ---
 title: Установка Postgres Pro на Astra Linux SE
-description: Инструкция по установке из репозитория Postgres Proffessional
+description: Инструкция по установке из репозитория Postgres Professional
 date: 2022-11-25T16:20:00+05:00
 tags: [linux, astra, postgres]
 ---
