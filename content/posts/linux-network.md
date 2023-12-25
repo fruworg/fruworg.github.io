@@ -13,6 +13,7 @@ nameserver <dns-server>
 ```
 
 ## Статика
+
 В файл `/etc/network/interfaces.d/<interface>` необходимо добавить следующие строки:
 
 ```shell
@@ -24,6 +25,7 @@ iface <interface> inet static
 ```
 
 ## DHCP
+
 В файл `/etc/network/interfaces.d/<interface>` необходимо добавить следующие строки:
 
 ```shell

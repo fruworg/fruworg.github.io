@@ -6,7 +6,7 @@ tags: [linux, postgres]
 ---
 
 ## Листинг запущенных экземпляров PostgreSQL
-```shell
+```bash
 pg_lsclusters
 ```
 

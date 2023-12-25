@@ -83,7 +83,7 @@ bundle exec rake install
 
 ## Сборка бинарника
 
-Собираем бинарник. Обязательно при этом необходимо молиться.
+Собираем бинарник и молимся.
 ```shell
 cd <ruby-util-dir>
 rubyc -r . -d /tmp/ -o <ruby-util> exe/<ruby-util>

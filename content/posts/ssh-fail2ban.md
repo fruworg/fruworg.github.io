@@ -10,6 +10,7 @@ apt -y install fail2ban
 ```
 
 ## Правило для ssh
+В файл `/etc/fail2ban/jail.d/sshd.conf` необходимо добавить следующее:
 ```config
 [sshd]
 enabled  = true
@@ -19,8 +20,6 @@ logpath  = /var/log/auth.log
 maxretry = 3
 findtime = 300
 bantime  = 3600
-
-# /etc/fail2ban/jail.d/sshd.conf
 ```
 
 ## Перезапуск сервиса fail2ban
