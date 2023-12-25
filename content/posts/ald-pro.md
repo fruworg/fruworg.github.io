@@ -18,6 +18,7 @@ hostnamectl set-hostname <dc-name>.<domain>
 ```
 
 ## Добавление репозиториев ALD Pro
+
 В файл `/etc/apt/sources.list.d/aldpro.list` необходимо добавить репозиторий ALD Pro:
 
 ```config
@@ -26,6 +27,7 @@ deb https://download.astralinux.ru/aldpro/stable/repository-extended/ generic ma
 ```
 
 ## Выставление приоритета репозиториев
+
 В файле `/etc/apt/preferences.d/aldpro` необходимо выставить приоритет репозиториев:
 
 ```config
@@ -35,11 +37,13 @@ Pin-Priority: 900
 ```
 
 ## Установка пакета
+
 ```shell
 DEBIAN_FRONTEND=noninteractive apt-get install -q -y aldpro-mp
 ```
 
 ## Развёртывание 
+
 После того, как команда развёртывания отработает и сервер перезагрузитcя, 
 сервер ALD Pro будет доступен по адресу: `https://<dc-name>.<domain>`
 
