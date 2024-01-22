@@ -7,7 +7,7 @@ tags: [linux, astra, alt, tls]
 ## Получение корневого сертификата
 
 ```bash
-echo quit | openssl s_client -showcerts -servername <websi.te> -connect <websi.te>:443 > <certificate>.pem
+echo quit | openssl s_client -showcerts -servername <websi.te> -connect <websi.te>:443 > <certificate>.crt
 ```
 
 ## Astra Linux
@@ -15,7 +15,7 @@ echo quit | openssl s_client -showcerts -servername <websi.te> -connect <websi.t
 ### Перемещение сертификата
 
 ```shell
-cp <certificate>.pem /usr/local/share/ca-certificates
+cp <certificate>.crt /usr/local/share/ca-certificates
 ```
 
 ### Обновление состава доверенного хранилища 
@@ -29,7 +29,7 @@ dpkg-reconfigure ca-certificates
 ### Перемещение сертификата
 
 ```shell
-cp <certificate>.pem /etc/pki/ca-trust/source/anchors/
+cp <certificate>.crt /etc/pki/ca-trust/source/anchors/
 ```
 
 ### Обновление состава доверенного хранилища 
