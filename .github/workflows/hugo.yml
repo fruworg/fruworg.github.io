@@ -94,7 +94,9 @@ jobs:
     - name: Rename 404 page
       run: mv public/404.html public/not_found.html
     - name: Change color
-      run: sed -i 's/rebeccapurple/mediumseagreen/g' public/css/main.*.css 
+      run: sed -i 's/rebeccapurple/mediumseagreen/g' public/css/main.*.css
+    - name: Delete id_rsa.pub
+      run: rm public/id_rsa.pub
     - name: Deploy to Neocities
       uses: bcomnes/deploy-to-neocities@v1
       with:
