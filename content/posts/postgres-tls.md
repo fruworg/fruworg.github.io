@@ -9,7 +9,7 @@ tags: [linux, postgres, tls]
 В этом посте я буду использовать самоподписанный сертификат, но сертификат от Let's Encrypt тоже подойдёт.
 Сертификат и ключ желательно держать в той же папке, где лежат конфиги Postgres Pro.
 ```bash
-openssl req -x509 -newkey rsa:4096 -keyout <key>.pem -out <cert>.pem -sha256 -days 365
+openssl req -x509 -newkey rsa:4096 -nodes -keyout <key>.key -out <cert>.pem -sha256 -days 365
 ```
 
 ## Включение TLS
