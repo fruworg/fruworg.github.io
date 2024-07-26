@@ -37,8 +37,8 @@ ListenPort = 51820
 PublicKey = <public-key>
 AllowedIPs = 172.0.0.2/32
 ```
-`<public-key>` - содержимое файла `/etc/wireguard/publickey` клиента </br>
-`<private-key>` - содержимое файла `/etc/wireguard/privatekey` сервера </br>
+`<public-key>` - содержимое файла `/etc/wireguard/publickey` клиента\
+`<private-key>` - содержимое файла `/etc/wireguard/privatekey` сервера\
 `<interface>` - имя сетевого интерфейса
 ### Включение WireGuard при запуске сервера
 ```shell
@@ -59,9 +59,9 @@ PublicKey = <public-key>
 Endpoint = <server-addr>:51820
 AllowedIPs = <allowed-ips>
 ```
-`<public-key>` - содержимое файла `/etc/wireguard/publickey` сервера </br>
-`<private-key>` - содержимое файла `/etc/wireguard/privatekey` клиента </br>
-`<server-addr>` - публичный адрес сервера </br>
+`<public-key>` - содержимое файла `/etc/wireguard/publickey` сервера\
+`<private-key>` - содержимое файла `/etc/wireguard/privatekey` клиента\
+`<server-addr>` - публичный адрес сервера\
 `<allowed-ips>` - IP-адреса, соединения с которыми будут идти через `WireGuard`
 ### Включение WireGuard при запуске клиента
 ```shell
