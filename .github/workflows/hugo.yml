@@ -58,6 +58,8 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Change color
         run: sed -i 's/peachpuff/rebeccapurple/g' public/css/main.*.css
+      - name: Change URI
+        run: find public -type f -exec sed -i 's/\/\/fruw.org/\/\/fruworg.github.io/g' {} +
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
