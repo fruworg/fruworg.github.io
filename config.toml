@@ -43,6 +43,10 @@ url = "//up.fruw.org"
 name = "git"
 url = "//github.com/fruworg"
 
+[[params.social]]
+name = "x"
+url = "//x.com/fruworg"
+
 [[menu.main]]
 name = "посты"
 url = "/posts"
