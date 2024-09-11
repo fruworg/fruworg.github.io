@@ -14,7 +14,7 @@ DECLARE
     r RECORD;
 BEGIN
     FOR r IN (SELECT table_name FROM information_schema.tables WHERE table_schema = 'public') LOOP
-        EXECUTE format('COPY %I TO %L WITH (FORMAT CSV, HEADER)', r.table_name, '/path-to-csv/'  r.table_name  '.csv');
+        EXECUTE format('COPY %I TO %L WITH (FORMAT CSV, HEADER)', r.table_name, '/<path-to-csv>/'  r.table_name  '.csv');
     END LOOP;
 END $$;
 ```
