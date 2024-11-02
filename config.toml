@@ -32,7 +32,7 @@ name = "pgp"
 url = "//keys.openpgp.org/pks/lookup?op=get&options=mr&search=im@fruw.org"
 
 [[params.social]]
-name = "keyoxide"
+name = "id"
 url = "//keyoxide.org/86a5f8191783e6f1"
 
 [[params.social]]
@@ -42,6 +42,10 @@ url = "//up.fruw.org"
 [[params.social]]
 name = "git"
 url = "//github.com/fruworg"
+
+[[params.social]]
+name = "steam"
+url = "//steamcommunity.com/id/fruworg"
 
 [[params.social]]
 name = "x"
