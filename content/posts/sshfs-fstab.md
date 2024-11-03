@@ -13,7 +13,7 @@ apt -y install sshfs
 
 ## Добавление строки в /etc/fstab
 
-```config
+```python
 <user>@<server-fqdn>:<remote-dir> <local-dir> sshfs allow_other,reconnect 0 
 ```
 

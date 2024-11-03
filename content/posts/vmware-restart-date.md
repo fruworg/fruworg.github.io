@@ -9,7 +9,7 @@ tags: [vmware]
 
 В файл `/etc/rc.local.d/local.sh` необходимо добавить следующее:
 
-```config
+```python
 #!/bin/sh ++group=host/vim/vmvisor/boot
 
 esxcli system time set --day=20 --month=3 --year=2022 --hour=10 --min=0 --sec=0

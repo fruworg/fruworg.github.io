@@ -23,7 +23,7 @@ chmod 777 /nfs
 
 В файл `/etc/exports` необходимо добавить следующую строку:
 
-```config
+```python
 /nfs 	<client-ip>(rw,sync,no_root_squash,no_subtree_check)
 ```
 

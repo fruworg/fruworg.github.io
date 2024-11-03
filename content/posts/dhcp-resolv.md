@@ -8,7 +8,7 @@ tags: [linux]
 Неприятно, когда конфиг не даёт поменять себя ручками, да?
 В `/etc/dhcp/dhclient.conf` необходимо добавить строки перезаписи:
 
-```config
+```python
 supersede domain-name-servers <dns-1>, <dns-n>;
 supersede domain-name "<domain.local>";
 ```

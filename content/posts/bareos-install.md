@@ -37,7 +37,7 @@ exit
 ### Бэкап определённой папки
 В файл `/etc/bareos/bareos-dir.d/fileset/<name>.conf` необходимо добавить настройку бэкапа определённой папки:
 
-```config
+```python
 FileSet {
   Name = "<name>"
   Description = "<description>"

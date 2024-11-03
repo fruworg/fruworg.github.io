@@ -12,7 +12,7 @@ apt install cifs-utils -y
 ## Создание файла с данными УЗ 
 В файл `/root/.smbuser` необходимо добавить данные УЗ для подключения к шаре:
 
-```config
+```python
 username=<username>
 password=<password>
 domain=<domain>
@@ -25,7 +25,7 @@ sudo chmod 0400 /root/.smbuser
 
 ## Развёртывание 
 В `/etc/fstab` необходимо добавить строку подключения к шаре:
-```config
+```python
 //<address> /<folder> cifs credentials=/root/.smbuser,uid=<uid>,gid=<gid> 0 0
 ```
 

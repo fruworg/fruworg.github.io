@@ -11,7 +11,7 @@ apt -y install fail2ban
 
 ## Правило для ssh
 В файл `/etc/fail2ban/jail.d/sshd.conf` необходимо добавить следующее:
-```config
+```python
 [sshd]
 enabled  = true
 port     = <ssh-port>

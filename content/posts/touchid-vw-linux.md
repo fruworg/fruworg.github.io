@@ -50,7 +50,7 @@ secret-tool store --label "com.quexten.bitwarden-biometrics-handler" account <us
 ## Правка конфига Firefox
 Необходимо создать файл `~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json` со следующим содержимым:
 
-```config
+```python
 {
     "name": "com.8bit.bitwarden",
     "description": "Bitwarden desktop <-> browser bridge",

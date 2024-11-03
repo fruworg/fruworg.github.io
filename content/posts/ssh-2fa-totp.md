@@ -13,14 +13,14 @@ apt install -y openssh-server libpam-google-authenticator
 ## Правка конфига PAM
 
 В файл `/etc/pam.d/common-auth` необходимо добавить следующее:
-```config
+```python
 auth required pam_google_authenticator.so
 ```
 
 ## Правка конфига ssh
 
 В файл `/etc/ssh/sshd_config` необходимо добавить следующее:
-```config
+```python
 ChallengeResponseAuthentication yes
 ```
 
@@ -34,12 +34,12 @@ google-authenticator
 
 ## Управление факторами (необязательно)
 Для запроса ключа при аутентификации необходимо в файл `/etc/ssh/sshd_config` добавить следующее:
-```config
+```python
 AuthenticationMethods publickey,password publickey,keyboard-interactive
 ```
 
 Для отключения запроса пароля при аутентификации необходимо в файле `/etc/pam.d/sshd` закомментировать следующюю строку:
-```config
+```python
 # @include common-auth
 ```
 

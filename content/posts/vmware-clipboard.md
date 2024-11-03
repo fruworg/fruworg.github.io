@@ -9,7 +9,7 @@ tags: [vmware]
 
 В файл `/etc/vmware/config` необходимо добавить следующее:
 
-```config
+```python
 vmx.fullpath = "/bin/vmx"
 isolation.tools.copy.disable="FALSE"
 isolation.tools.paste.disable="FALSE"

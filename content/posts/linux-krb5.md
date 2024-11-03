@@ -33,7 +33,7 @@ hostnamectl set-hostname <hostname>
 ### Правка файла hosts
 
 Вместо правки файла `/etc/hosts` можно поднять DNS-сервер и сделать записи там.
-```config
+```python
 <server-ip> <server-name.domain.name> <server-name>
 <client-ip> <client-name.domain.name> <client-name>
 ```
@@ -41,7 +41,7 @@ hostnamectl set-hostname <hostname>
 ### Редактирование конфига Kerberos
 
 В `/etc/krb5.conf` необходимо добавить данные а реалме и kdc:
-```config
+```python
 [libdefaults]
         default_realm = <DOMAIN.NAME>
 
@@ -77,7 +77,7 @@ quit
 ### Разрешение административных прав 
 Добавляем администратора в `/etc/krb5kdc/kadm5.acl`:
 
-```config
+```python
 <admin-name>/admin
 ```
 

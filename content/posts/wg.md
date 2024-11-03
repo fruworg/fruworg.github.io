@@ -17,7 +17,7 @@ wg genkey | tee privatekey | wg pubkey > publickey
 ## Конфигурация сервера
 ### Форвардинг пакетов
 В файл `/etc/sysctl.conf` необходимо добавить следующие строки:
-```config
+```python
 net.ipv4.ip_forward=1
 net.ipv6.conf.all.forwarding=1
 ```
@@ -25,7 +25,7 @@ net.ipv6.conf.all.forwarding=1
 
 ### Конфигурация WireGuard
 В файл `/etc/wireguard/<conn-name>.conf` необходимо дописать следующее:
-```config
+```python
 [Interface]
 PrivateKey = <private-key>
 Address = 172.0.0.1/24
@@ -48,7 +48,7 @@ systemctl enable --now wg-quick@<conn-name>.service
 ## Конфигурация клиента
 ### Конфигурация WireGuard
 В файл `/etc/wireguard/<conn-name>.conf` необходимо дописать следующее:
-```config
+```python
 [Interface]
 Address = 172.0.0.2/32
 PrivateKey = <private-key>

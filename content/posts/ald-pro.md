@@ -8,7 +8,7 @@ tags: [linux, astra, krb5]
 
 В файл `/etc/hosts` необходимо добавить ip и fqdn DC:
 
-```config
+```python
 <dc-ip> <dc-name>.<domain> <dc-name>
 ```
 
@@ -21,7 +21,7 @@ hostnamectl set-hostname <dc-name>.<domain>
 
 В файл `/etc/apt/sources.list.d/aldpro.list` необходимо добавить репозиторий ALD Pro:
 
-```config
+```python
 deb https://download.astralinux.ru/aldpro/stable/repository-main/ 1.0.0 main
 deb https://download.astralinux.ru/aldpro/stable/repository-extended/ generic main
 ```
@@ -30,7 +30,7 @@ deb https://download.astralinux.ru/aldpro/stable/repository-extended/ generic ma
 
 В файле `/etc/apt/preferences.d/aldpro` необходимо выставить приоритет репозиториев:
 
-```config
+```python
 Package: *
 Pin: release n=generic
 Pin-Priority: 900

@@ -15,7 +15,7 @@ openssl req -x509 -newkey rsa:4096 -nodes -keyout <key>.key -out <cert>.pem -sha
 ## Включение TLS
 
 В файл `/var/lib/pgpro/std-*/data/postgresql.conf` необходимо добавить следующие строки:
-```config
+```python
 ssl = on
 ssl_cert_file = '<cert>.pem'
 ssl_key_file = '<key>.pem'
@@ -25,7 +25,7 @@ listen_addresses = 'localhost, <master-ip>'
 ## Разрешение доступа через TLS
 
 В файл `/var/lib/pgpro/std-*/data/pg_hba.conf` необходимо добавить следующие строки:
-```config
+```python
 hostssl <user> <database> <client-ip> scram-sha-256
 ```
 
