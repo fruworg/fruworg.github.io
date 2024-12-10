@@ -6,7 +6,7 @@ tags: [linux]
 ---
 ## Расширение раздела
 
-`<disk>` - sda
+`<disk>` - sda \
 `<partition>` - 1
 
 ```shell
