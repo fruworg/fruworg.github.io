@@ -6,8 +6,8 @@ tags: [linux]
 ---
 ## Расширение раздела
 
-<disk> - sda
-<partition> - 1
+`<disk>` - sda
+`<partition>` - 1
 
 ```shell
 growpart /dev/<disk> <partition>
@@ -15,7 +15,7 @@ growpart /dev/<disk> <partition>
 
 ## Увеличение ФС
 
-<partition> - sda1
+`<partition>` - sda1
 
 ```shell
 resize2fs /dev/<partition>
