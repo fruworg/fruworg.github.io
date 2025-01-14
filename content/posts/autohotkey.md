@@ -9,7 +9,7 @@ tags: [windows]
 Для бинда клавиш я использую [AutoHotkey](https://www.autohotkey.com/download/ahk-v2.exe). Для автозапуска нужно перенести `.ahk` файлы в `shell:startup`.
 	
 ## CapLang.ahk
-Смена раскладки по нажатию на `CapsLock`. Сам `CapsLock` включается через `Shift+CapsLock`.
+Смена раскладки по нажатию на `CapsLock`. Сам `CapsLock` переключается через `Shift+CapsLock`.
 
 ```python
 SendMode("Input")
