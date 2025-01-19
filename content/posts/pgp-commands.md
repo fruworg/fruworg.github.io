@@ -23,6 +23,6 @@ gpg --import-ownertrust trust.txt
 
 ```bash
 gpg --list-keys
-gpg --quick-set-expire <fingerprint> 1y
+gpg --quick-set-expire <fingerprint> 1y '*'
 gpg --export <your@ema.il> | curl -T - https://keys.openpgp.org
 ```
