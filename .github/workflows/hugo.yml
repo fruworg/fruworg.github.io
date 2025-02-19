@@ -61,7 +61,7 @@ jobs:
       - name: Change URI
         run: find public -type f -exec sed -i 's/\/\/fruw.org/\/\/fruworg.github.io/g' {} +
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
