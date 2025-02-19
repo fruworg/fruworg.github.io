@@ -68,5 +68,5 @@ weight = 3
 
 [[menu.main]]
 name = "dn42"
-url = "//dn42.fruw.org"
+url = "https://dn42.fruw.org"
 weight = 4
