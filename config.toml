@@ -67,6 +67,6 @@ url = "/index.xml"
 weight = 3
 
 [[menu.main]]
-name = "webring"
-url = "/webring.html"
+name = "dn42"
+url = "//dn42.fruw.org"
 weight = 4
