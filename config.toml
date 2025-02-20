@@ -8,7 +8,7 @@ theme = "themu"
 pygmentsstyle = "fruity"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-paginate = 4
+pagination.pagerSize = 4
 
 [params]
 description = "всем привет!"
