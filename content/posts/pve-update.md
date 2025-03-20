@@ -38,3 +38,15 @@ init 6
 ```shell
 bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/misc/post-pve-install.sh)"
 ```
+
+## Ограничение потребление RAM zfs'ом
+В `/etc/modprobe.d/zfs.conf` добавить следующую строку (2GB на 1TB):
+```python
+options zfs zfs_arc_max=4294967296
+```
+
+Применение и перезагрузка
+```shell
+update-initramfs -u -k all
+init 6
+```
