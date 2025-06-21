@@ -25,3 +25,11 @@ systemctl enable --now dnf-automatic-install.timer
 subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
 yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 ```
+
+## Отключение дампов ядра
+
+```shell
+systemctl disable --now kdump
+grubby --update-kernel=ALL --remove-args="crashkernel"
+init 6
+```
