@@ -68,10 +68,15 @@ weight = 3
 
 [[menu.main]]
 name = "dn42"
-url = "https://dn42.fruw.org"
+url = "https://f.dn42"
 weight = 4
+
+[[menu.main]]
+name = "i2p"
+url = "http://f.i2p"
+weight = 5
 
 [[menu.main]]
 name = "tor"
 url = "http://fruworgtuaajxcxdcygjybaeon7oid4ibkaugotfavucjs4i7zbrrnad.onion"
-weight = 5
+weight = 6
