@@ -70,3 +70,8 @@ weight = 3
 name = "dn42"
 url = "https://dn42.fruw.org"
 weight = 4
+
+[[menu.main]]
+name = "tor"
+url = "http://fruworgtuaajxcxdcygjybaeon7oid4ibkaugotfavucjs4i7zbrrnad.onion"
+weight = 5
