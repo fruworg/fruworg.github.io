@@ -31,7 +31,7 @@ HiddenServiceDir /var/lib/tor/website
 HiddenServicePort 80 127.0.0.1:80
 ```
 
-Файлы, сгенерированные `mkp224o`, необходимо добавить в директорию '/var/lib/tor/website':
+Файлы, сгенерированные `mkp224o`, необходимо добавить в директорию `/var/lib/tor/website`:
 
 ```shell
 mkdir /var/lib/tor/website
