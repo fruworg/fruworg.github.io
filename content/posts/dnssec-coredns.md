@@ -17,7 +17,7 @@ dnssec-keygen -a ECDSAP256SHA256 <doma.in>
 ```python
 	dnssec {
 		key file /etc/coredns/dnssec/<filename-without-extension>
-  }
+	}
 ```
 
 И перезапустить `CoreDNS` командой:
