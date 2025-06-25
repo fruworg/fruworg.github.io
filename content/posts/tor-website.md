@@ -58,6 +58,6 @@ http://<domain>.onion {
 ## Перезапуск сервисов
 
 ```shell
-sudo systemctl restart tor
-sudo systemctl restart caddy
+systemctl restart tor
+systemctl restart caddy
 ```
