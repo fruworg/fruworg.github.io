@@ -44,7 +44,7 @@ cd i2pd-tools
 make
 ```
 
-```bash
+```shell
 ./regaddr /var/lib/i2pd/website.dat <domain>.i2p
 ```
 
@@ -55,7 +55,7 @@ make
 Ваш полный `b32` домен вы можете посмотреть командой:
 
 ```shell
-/var/lib/i2pd/destinations
+ls /var/lib/i2pd/destinations
 ```
 
 В `Caddyfile` добавьте следующее:
