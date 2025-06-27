@@ -1,6 +1,6 @@
 ---
 title: Поднятие сайта в TOR
-description: Caddy
+description: Caddy + torrc
 date: 2025-06-25T14:02:00+02:00
 tags: [linux, tor, caddy]
 ---
