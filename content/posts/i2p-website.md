@@ -1,6 +1,6 @@
 ---
 title: Поднятие сайта в i2p
-description: Caddy
+description: Caddy + i2pd
 date: 2025-06-25T14:10:00+02:00
 tags: [linux, i2p, caddy]
 ---
