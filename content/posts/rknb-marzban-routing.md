@@ -49,8 +49,8 @@ XRAY_SUBSCRIPTION_URL_PREFIX = "https://<fqdn>"
 ```
 
 Для полученя `xray` ключа и `uuid` для `lib/xray_config.json` необходимо скачать [xray-core](https://github.com/XTLS/Xray-core/releases/).\
-`uuid` - `./xray uuid`
-`key` - `./xray x25519`
+`uuid` - `./xray uuid`\
+`key` - `./xray x25519`\
 Далее нужно создать файл `lib/xray_config.json` (`fqdn` у каждого сервера свой):
 ```
 {
