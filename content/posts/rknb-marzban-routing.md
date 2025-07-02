@@ -196,7 +196,7 @@ docker compose up -d
 конфига `v2rayng` и заменить тег `proxy` на `DIRECT`):
 ```python
     "outbounds": [
-	<proxy>
+        <proxy>
         {
             "protocol": "freedom",
             "tag": "RU"
