@@ -191,8 +191,9 @@ docker compose up -d
     }
 ```
 
-А `outbounds` на (вместо `proxy` необходимо вставить `outbound` с тегом `proxy` из экспортированного конфига `v2rayng` и заменить тег `proxy` на `DIRECT`):
-
+И также только на российском сервере изменить `outbounds` на:\
+(вместо `proxy` необходимо вставить `outbound` с тегом `proxy` из экспортированного
+конфига `v2rayng` и заменить тег `proxy` на `DIRECT`):
 ```python
     "outbounds": [
 	<proxy>
