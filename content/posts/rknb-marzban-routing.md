@@ -15,13 +15,13 @@ tags: [linux, xray]
 ## Установка Marzban (аналогично для двух серверов)
 
 Нужно создать папки `tls` и `lib`:
-```
+```shell
 mkdir tls
 mkdir lib
 ```
 Необходимо переместить `TLS` ключ и сертификат в папку `tls`.\
 Необходимо создать `compose.yaml`:
-```
+```python
 services:
   marzban:
     image: gozargah/marzban:latest
@@ -35,7 +35,7 @@ services:
 ```
 
 В файл `.env` нужно вписать следующее:
-```
+```python
 UVICORN_HOST = "0.0.0.0"
 UVICORN_PORT = 8000
 ALLOWED_ORIGINS=https://<fqdn>
@@ -52,7 +52,7 @@ XRAY_SUBSCRIPTION_URL_PREFIX = "https://<fqdn>"
 `uuid` - `./xray uuid`\
 `key` - `./xray x25519`\
 Далее нужно создать файл `lib/xray_config.json` (`fqdn` у каждого сервера свой):
-```
+```python
 {
     "log": {
         "loglevel": "debug"
@@ -138,7 +138,7 @@ XRAY_SUBSCRIPTION_URL_PREFIX = "https://<fqdn>"
 }
 ```
 
-И, наконец, необходимо поднять контейнер.
+И, наконец, необходимо поднять контейнер:
 
 ```shell
 docker compose up -d
@@ -148,14 +148,14 @@ docker compose up -d
 
 Далее необходимо создать пользователей для конечных пользователей на российском сервере
 и пользователя на сервере вне России для российского сервера.
-Далее приложением `v2rayng` подключаемся на сервер вне России и экспортируйте конфиг
+Далее приложением `v2rayNG` подключаемся на сервер вне России и экспортируйте конфиг
 `Экспорт всей конфигурации в буфер обмена`.
 
 ## Модификация роутинга
 
 Далее только на российском сервере необходимо в `xray_config.json` изменить `routing` на:
 
-```
+```python
     "routing": {
         "rules": [
             {
@@ -193,7 +193,7 @@ docker compose up -d
 
 А `outbounds` на (вместо `proxy` необходимо вставить `outbound` с тегом `proxy` из экспортированного конфига `v2rayng` и заменить тег `proxy` на `DIRECT`):
 
-```
+```python
     "outbounds": [
 	<proxy>
         {
