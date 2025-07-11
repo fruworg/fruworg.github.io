@@ -36,7 +36,7 @@ init 6
 ## Дошлифовка
 
 ```shell
-bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/misc/post-pve-install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/tools/pve/post-pve-install.sh)"
 ```
 
 ## Ограничение потребление RAM zfs'ом
