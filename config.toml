@@ -11,7 +11,7 @@ pygmentscodefencesguesssyntax = true
 pagination.pagerSize = 4
 
 [params]
-description = "всем привет!"
+description = "гражданин интернета"
 subtitlefile = true
 og_image = "fruworg.png"
 
